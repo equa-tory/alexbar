@@ -1,0 +1,34 @@
+:root {
+    --wht01: #FFFFFF;
+    --wht02: #A0A5AC;
+    --wht03: #000;
+
+    /*--help-margin-top: 120px;*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: var(--drk06);
+
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard syntax */
+    resize: none;
+}
+
+html, body {
+    background: var(--drk02);
+    padding: 0;
+	margin: 0;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {display: none;}
+
+/* --------------------------------------------------------------------------- */

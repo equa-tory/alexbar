@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="{% static 'core/manifest.json' %}">
+    <title>{{ title }}</title>
+
+    <link type="text/css" href="{% static 'core/css/style.css' %}" rel="stylesheet"/>
+    <meta name="csrf_token" content="{{ csrf_token }}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta http-equiv="refresh" content="11">
+</head>
+<body>
+    
+    <aside>
+        <header>
+            <div class="title">
+                <a class="logo" href="{% url 'index' %}"><span>等しい</span></a>
+                {% for m in menus %}
+                {% if m.type == 'title' %}
+                    <a class="title-btn" href="{% url m.url %}">{{m.title}}</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </header>
+        <menu>
+            {% for m in menus %}
+            {% if m.type == 'menu' %}
+                <!-- menu -->
+            {% endif %}
+            {% endfor %}
+        </menu>
+        <footer>
+            <span>CONTACT</span>
+            <a href="mailto:thesuspect9980@gmail.com">Mail</a>
+            <a href="https://telegram.me/TheSuspectDBG">Telegram</a>
+            <a>Discord • <span style="user-select: all;-webkit-user-select: all;-moz-user-select: all;-ms-user-select: all;">@equa_tory</span></a>
+        </footer>
+    </aside>
+
+    <main>{% block content %}{% endblock %}</main>
+
+</body>
+</html>
