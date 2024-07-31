@@ -3,31 +3,33 @@ from django.shortcuts import redirect, render
 
 from core.utils import *
 
+def redir(request):
+    return redirect('index')
+
 def index(request):
-     data = {
+    data = {
         'title': 'Alex Barauskas',
-        'menus': menus,
+        'menus': menus
     }
     return render(request, 'core/index.html', context=data)
 
-
 def about(request):
-     data = {
+    data = {
         'title': 'About',
-        'menus': menus,
+        'menus': menus
     }
     return render(request, 'core/about.html', context=data)
 
 def ideas(request):
-     data = {
+    data = {
         'title': 'Ideas',
-        'menus': menus,
+        'menus': menus
     }
     return render(request, 'core/ideas.html', context=data)
 
 def pageNotFound(request, exception):
     data = {
         'title': '404',
-        'menus': menus,
+        'menus': menus
     }
     return render(request, 'core/404.html', context=data)
