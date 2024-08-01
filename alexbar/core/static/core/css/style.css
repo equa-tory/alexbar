@@ -4,6 +4,11 @@
     --wht03: #A0A5AC;
     --wht04: #3b3d41;
 
+    --drk01: #181a1b;
+    --drk02: #202325;
+    --drk03: #b1b1b1;
+    --drk04: #e4e4e4;
+
     --gradient: linear-gradient(90deg, var(--wht03) 0%, var(--wht04) 100%);
 
     --sidebar-left-offset: 30px;
@@ -12,7 +17,7 @@
     --sidebar-text-weight: 370;
     --sidebar-font-size: 0.9125rem;
 
-    --main-offset: 40px 65px;
+    --main-offset: 35px 65px;
 }
 * {
     margin: 0;
@@ -78,12 +83,19 @@ body {
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 1fr;
+    background-color: var(--wht01);
+}
+
+body.dark-theme {
+    --wht01: var(--drk01);
+    --wht02: var(--drk02);
+    --wht03: var(--drk03);
+    --wht04: var(--drk04);
 }
 
 /* #region Sidebar */
-/* #region Header */
 aside {
-    border-right: 1px solid rgb(228, 228, 228);
+    border-right: 1px solid var(--wht02);
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     height: 100dvh;
@@ -91,7 +103,7 @@ aside {
     display: flex;
     flex-direction: column;
 }
-
+/* #region Header */
 aside header {
     border-bottom: 1px solid var(--wht02);
     height: 230px;
@@ -106,13 +118,26 @@ aside header .title {
     font-weight: bold;
     gap: 20px;
 }
-aside header .title .logo span {
+aside header .title .framer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+aside header .title .framer .logo span {
     background-color: var(--wht02);
     font-family: "Noto Serif JP", serif;
     color: var(--wht04);
     font-size: 26px;
     border-radius: 5px;
     padding: 10px;
+}
+aside header .title .framer svg {
+    width: 30px;
+}
+aside header .title .framer svg circle, aside header .title .framer svg ellipse{
+    fill:var(--wht04);
 }
 aside header .title .title-btn {
     background-color: var(--wht01);
@@ -206,6 +231,7 @@ aside footer span:first-child {
     transition: .3s ease;
 }
 aside footer a span {
+    color: var(--wht04);
     user-select: all;
     -webkit-user-select: all;
     -moz-user-select: all;
@@ -398,6 +424,7 @@ aside footer a span {
     justify-content: flex-start;
 }
 .index .content .framer .post .framer .title {
+    color: var(--wht04);
     font-size: 20px;
     font-weight: 550;
 }
@@ -409,6 +436,23 @@ aside footer a span {
 .index .content .framer .post .framer .date {
     color: var(--wht03);
     font-size: 16px;
+    font-weight: 450;
+}
+/* #endregion */
+/* #region Footer */
+.index footer{
+    border-top: 2px solid var(--wht02);
+    width: 100%;
+    height: 2px;
+    padding: var(--main-offset);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.index footer span {
+    color: var(--wht03);
+    font-size: 14px;
     font-weight: 450;
 }
 /* #endregion */
