@@ -1,8 +1,6 @@
 menus = [
-    {'type': 'title', 'title': 'About', 'url':'about'},
-    {'type': 'title', 'title': 'Ideas', 'url':'ideas'},
-    {'type': 'menu', 'title': 'Games', 'url':'#'},
-    {'type': 'contact', 'title': 'Discord', 'url':'#'},
+    {'title': 'About', 'url':'about'},
+    {'title': 'Ideas', 'url':'ideas'},
 ]
 
 class DataMixin:

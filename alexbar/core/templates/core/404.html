@@ -2,12 +2,11 @@
 
 {% block content %}
 
-<div style="text-align: center;margin-top: 30dvh;">
-    <h1>404</h1>
-    <h3>Unfortunately, this page does not exist. Maybe it will in the future!</h3>
-    <h1>In the mean time, feel free to navigate to another page on the sidebar, or return to the homepage.</h1>
+<div class="page-not-found">
+    <h5 class="reveal">404</h5>
+    <h1 class="reveal">Unfortunately, this page does not exist.<br>Maybe it will in the future!</h1>
+    <h5 class="reveal">In the mean time, feel free to navigate to another page on the sidebar, or return to the homepage.</h5>
 
-    <a href="{% url 'redir' %}"><span>Return home</span></a>
+    <a class="reveal" href="{% url 'redir' %}"><span>Return home</span></a>
 </div>
-
 {% endblock %} 
