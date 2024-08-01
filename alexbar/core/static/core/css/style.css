@@ -48,7 +48,7 @@ html, body {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
 
 /* Reveal Animation */
-/* body main span,body main h1,body main h2,
+body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p, 
 body main div {
@@ -61,7 +61,7 @@ body main div {
     -webkit-background-clip: text;
             background-clip: text;
     animation: t .5s .5s both;
-} */
+}
 
 @keyframes t{
     to {background-size: 100% 100%;
@@ -140,7 +140,6 @@ aside header .title .framer svg circle, aside header .title .framer svg ellipse{
     fill:var(--wht04);
 }
 aside header .title .title-btn {
-    background-color: var(--wht01);
     font-size: 20px;
     color: var(--wht04);
     transition: .3s ease;

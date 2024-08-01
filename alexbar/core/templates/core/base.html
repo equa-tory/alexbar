@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="{% static 'core/manifest.json' %}">
-    <title>{{ title }}</title>
+    <title>Alex Barauskas</title>
+    <!-- <title>{{ title }}</title> -->
 
     <link type="text/css" href="{% static 'core/css/style.css' %}" rel="stylesheet"/>
     <meta name="csrf_token" content="{{ csrf_token }}">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta http-equiv="refresh" content="1">
+    <meta http-equiv="refresh" content="3">
 </head>
 <body class="dark-theme">
     
@@ -20,7 +21,7 @@
             <div class="title">
                 <div class="framer">
                     <a class="logo" href="{% url 'index' %}"><span>等しい</span></a>
-                    <svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="theme-toggle" width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_55_14)">
                         <ellipse cx="40" cy="40.5" rx="19" ry="19.5" fill="white"/>
                         <circle cx="40" cy="6" r="6" fill="white"/>
@@ -67,5 +68,6 @@
 
     <main>{% block content %}{% endblock %}</main>
 
+    <script src="{% static 'core/js/script.js' %}"></script>
 </body>
 </html>
