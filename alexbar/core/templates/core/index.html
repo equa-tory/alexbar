@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="index">
@@ -16,9 +17,26 @@
     </div>
     
     <div class="content">
-        
-    </div>
-    
+        <div class="framer">
+            <div class="post">
+                <a href="#" class="image">
+                    <img src="{% static 'core/img/1.png' %}">
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">Little Giant</span>
+                        <span class="description">The Game</span>
+                    </div>
+                    <span class="date">2024</span>
+                </div>
+            </div>
+        </div>
+        <div class="framer">
+            
+        </div>
+        <div class="framer">
+            
+        </div>
     <footer>
         
     </footer>

@@ -1,6 +1,6 @@
 :root {
     --wht01: #FFFFFF;
-    --wht02: #ecece7;
+    --wht02: #f0f0f0;
     --wht03: #A0A5AC;
     --wht04: #3b3d41;
 
@@ -8,6 +8,7 @@
 
     --sidebar-left-offset: 30px;
     --sidebar-space: 10px 0;
+    /* --sidebar-space: 5px 0; */
     --sidebar-text-weight: 370;
     --sidebar-font-size: 0.9125rem;
 
@@ -42,20 +43,20 @@ html, body {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
 
 /* Reveal Animation */
-body main span,body main h1,body main h2,
+/* body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p, 
 body main div {
     color: #0000;
     background: 
         linear-gradient(#000 0 0) no-repeat;
-    background-size: 0% 100%; /* we start at 0% 100% */
+    background-size: 0% 100%; 
     filter: blur(1em);
     transform:translateY(20px);
     -webkit-background-clip: text;
             background-clip: text;
     animation: t .5s .5s both;
-}
+} */
 
 @keyframes t{
     to {background-size: 100% 100%;
@@ -262,8 +263,9 @@ aside footer a span {
 .index{
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 100%;
+    height: 100dvh;
 }
+/* #region Header */
 .index header{
     height: 116px;
     width: 90%;
@@ -299,5 +301,115 @@ aside footer a span {
 .index .separator span {
     color: var(--wht03);
     letter-spacing: 2px;
+    font-weight: 250;
+    font-size: 14px;
 }
+/* #endregion */
+/* #region Content */
+.index .content {
+    margin: var(--main-offset);
+    /* background-color: #000; */
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex: 1 0 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    height:min-content;
+    justify-content: center;
+}
+.index .content .framer {
+    display: flex;
+    align-items: center;
+    flex: 1 0 0px;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+}
+.index .content .framer .post {
+    display: flex;
+    align-items: flex-start;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: min-content;
+    justify-content: flex-start;
+    width: 100%;
+}
+.index .content .framer .post .image {
+    /* !!!!!!!!!!!!!!!!!!CHANGE\/!!!!!!!!!!!!!!!! */
+    background-color: var(--wht02); 
+    border-radius: 6px;
+    aspect-ratio: 1.5/1;
+    flex: none;
+    height: var(auto, 169px);
+    width: 100%;
+    --border-bottom-width: 0.5px;
+    --border-color: var(--token-3de59ac9-aab9-4b54-8172-afb45dd4eb8a, rgb(223, 224, 225));
+    --border-left-width: 0.5px;
+    --border-right-width: 0.5px;
+    --border-style: solid;
+    --border-top-width: 0.5px;
+    box-shadow: rgba(28, 29, 33, 0.133) 
+        0px 0.60219px 0.60219px -1.16667px, 
+        rgba(28, 29, 33, 0.12) 0px 2.28853px 2.28853px 
+        -2.33333px, rgba(28, 29, 33, 0.06) 0px 10px 10px
+        -3.5px, rgba(223, 224, 225, 0.3) 0px 0px 0px 0px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    transition: .3s ease;
+}
+.index .content .framer .post .image:hover {
+    box-shadow: rgba(28, 29, 33, 0.133) 0px 0.60219px 0.60219px -1.16667px, 
+        rgba(28, 29, 33, 0.52) 0px 2.28853px 10.28853px -2.33333px, 
+        rgba(28, 29, 33, 0.06) 0px 10px 10px -3.5px,
+        rgba(223, 224, 225, 0.3) 0px 0px 0px 0px;
+}
+.index .content .framer .post .image img {
+    aspect-ratio: 1/1;
+    width: 32%;
+}
+.index .content .framer .post .framer {
+    display: flex;
+    align-items: flex-start;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+    height: min-content;
+    justify-content: space-between;
+    width: 100%;
+}
+.index .content .framer .post .framer .name {
+    display: flex;
+    align-items: flex-start;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: min-content;
+    justify-content: flex-start;
+}
+.index .content .framer .post .framer .title {
+    font-size: 20px;
+    font-weight: 550;
+}
+.index .content .framer .post .framer .description {
+    color: var(--wht03);
+    font-size: 20px;
+    font-weight: 550;
+}
+.index .content .framer .post .framer .date {
+    color: var(--wht03);
+    font-size: 16px;
+    font-weight: 450;
+}
+/* #endregion */
 /* #endregion */
