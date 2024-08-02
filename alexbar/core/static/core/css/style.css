@@ -50,23 +50,25 @@ html, body {
 /* Reveal Animation */
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
-body main h6,body main a,body main p, 
-body main div {
+body main h6,body main a,body main p
+body main div
+{
     color: #0000;
-    background: 
-        linear-gradient(#000 0 0) no-repeat;
-    background-size: 0% 100%; 
-    filter: blur(1em);
+    background: linear-gradient(#000 0 0) no-repeat;
+    background-size: 0% 100%;
     transform:translateY(20px);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     animation: t .5s .5s both;
+    filter: blur(1em);
 }
 
 @keyframes t{
-    to {background-size: 100% 100%;
-    transform:translateY(0px);
-    filter:blur(0em);} /* we animate to 100% 100%*/
+    to {
+        background-size: 100% 100%;
+        transform:translateY(0px);
+        filter:blur(0em);
+    }
 }
 
 /* --------------------------------------------------------------------------- */
@@ -132,6 +134,9 @@ aside header .title .framer .logo span {
     font-size: 26px;
     border-radius: 5px;
     padding: 10px;
+
+    text-shadow:
+        0 0 7px var(--wht04);
 }
 aside header .title .framer svg {
     width: 30px;
@@ -366,7 +371,7 @@ aside footer a span {
 }
 .index .content .framer .post .image {
     /* !!!!!!!!!!!!!!!!!!CHANGE\/!!!!!!!!!!!!!!!! */
-    background-color: var(--wht02); 
+    background: var(--wht02); 
     border-radius: 6px;
     aspect-ratio: 1.5/1;
     flex: none;
@@ -378,11 +383,10 @@ aside footer a span {
     --border-right-width: 0.5px;
     --border-style: solid;
     --border-top-width: 0.5px;
-    box-shadow: rgba(28, 29, 33, 0.133) 
-        0px 0.60219px 0.60219px -1.16667px, 
-        rgba(28, 29, 33, 0.12) 0px 2.28853px 2.28853px 
-        -2.33333px, rgba(28, 29, 33, 0.06) 0px 10px 10px
-        -3.5px, rgba(223, 224, 225, 0.3) 0px 0px 0px 0px;
+    box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
+        var(--wht03) 0px 2.28853px 2.28853px -2.33333px, 
+        var(--wht02) 0px 10px 10px -3.5px,
+        var(--wht01) 0px 0px 0px 0px;
 
     display: flex;
     align-items: center;
@@ -393,10 +397,14 @@ aside footer a span {
     transition: .3s ease;
 }
 .index .content .framer .post .image:hover {
-    box-shadow: rgba(28, 29, 33, 0.133) 0px 0.60219px 0.60219px -1.16667px, 
+    /* box-shadow: rgba(28, 29, 33, 0.133) 0px 0.60219px 0.60219px -1.16667px, 
         rgba(28, 29, 33, 0.52) 0px 2.28853px 10.28853px -2.33333px, 
         rgba(28, 29, 33, 0.06) 0px 10px 10px -3.5px,
-        rgba(223, 224, 225, 0.3) 0px 0px 0px 0px;
+        rgba(223, 224, 225, 0.3) 0px 0px 0px 0px; */
+    box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
+        var(--wht03) 0px 2.28853px 10.28853px -2.33333px, 
+        var(--wht02) 0px 10px 10px -3.5px,
+        var(--wht01) 0px 0px 0px 0px;
 }
 .index .content .framer .post .image img {
     aspect-ratio: 1/1;
