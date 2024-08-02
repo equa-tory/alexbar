@@ -281,11 +281,17 @@ aside footer a span {
     --border-top-width:1px;
     --border-style:solid;
     --border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 0.60219px 0.60219px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -1.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
+    box-shadow:
+    var(--wht04) 0px 0.60219px 0.60219px -1.25px,
+    var(--wht04) 0px 2.28853px 2.28853px -1.5px,
+    var(--wht03) 0px 10px 10px -3.75px;
     transition: .3s ease;
 }
 .page-not-found a:hover{
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 0.60219px 0.60219px -1.25px, rgba(0, 0, 0, 0.16) 0px 4.28853px 4.28853px -1px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
+    box-shadow:
+    var(--wht04) 0px 0.60219px 0.60219px -1.25px,
+    var(--wht04) 0px 2.28853px 10.28853px -1.5px,
+    var(--wht03) 0px 10px 10px -3.75px;
 }
 /* #endregion */
 

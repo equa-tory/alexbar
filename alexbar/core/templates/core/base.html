@@ -21,7 +21,7 @@
         <header>
             <div class="title">
                 <div class="framer">
-                    <a class="logo" href="{% url 'index' %}"><span>等しい</span></a>
+                    <a class="logo" id="logo"><span>等しい</span></a>
                     <svg id="theme-toggle" width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_55_14)">
                         <ellipse cx="40" cy="40.5" rx="19" ry="19.5" fill="white"/>
@@ -67,7 +67,7 @@
         </footer>
     </aside>
 
-    <main>{% block content %}{% endblock %}</main>
+    <main id="content">{% block content %}{% endblock %}</main>
 
     <script src="{% static 'core/js/script.js' %}"></script>
 </body>
