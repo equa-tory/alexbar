@@ -18,6 +18,8 @@
     --sidebar-font-size: 0.9125rem;
 
     --main-offset: 35px 65px;
+    --about-offset: 35px 120px;
+
 }
 * {
     margin: 0;
@@ -274,13 +276,6 @@ aside footer a span {
     width: fit-content;
     padding: 8px 16px;
     
-    --border-color:rgb(223,224,225);
-    --border-bottom-width:1px;
-    --border-left-width:1px;
-    --border-right-width:1px;
-    --border-top-width:1px;
-    --border-style:solid;
-    --border-radius: 6px;
     box-shadow:
     var(--wht04) 0px 0.60219px 0.60219px -1.25px,
     var(--wht04) 0px 2.28853px 2.28853px -1.5px,
@@ -328,13 +323,13 @@ aside footer a span {
     font-size: 45px;
     font-weight: 550;
 }
-.index .separator {
+.separator {
     border-top: 1.5px solid var(--wht02);
     width: 90%;
     margin: var(--main-offset);
     padding: 8px;
 }
-.index .separator span {
+.separator span {
     color: var(--wht03);
     letter-spacing: 2px;
     font-weight: 250;
@@ -375,6 +370,17 @@ aside footer a span {
     justify-content: flex-start;
     width: 100%;
 }
+.fog {
+    background: radial-gradient(50% 50% at 50% 50%,
+     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    
+    flex: 0 0 auto;
+    overflow: visible;
+    position: absolute;
+    z-index: 1;
+    box-sizing: border-box;
+    user-select: none;
+}
 .index .content .framer .post .image {
     /* !!!!!!!!!!!!!!!!!!CHANGE\/!!!!!!!!!!!!!!!! */
     background: var(--wht02); 
@@ -383,12 +389,6 @@ aside footer a span {
     flex: none;
     height: var(auto, 169px);
     width: 100%;
-    --border-bottom-width: 0.5px;
-    --border-color: var(--token-3de59ac9-aab9-4b54-8172-afb45dd4eb8a, rgb(223, 224, 225));
-    --border-left-width: 0.5px;
-    --border-right-width: 0.5px;
-    --border-style: solid;
-    --border-top-width: 0.5px;
     box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
         var(--wht03) 0px 2.28853px 2.28853px -2.33333px, 
         var(--wht02) 0px 10px 10px -3.5px,
@@ -469,4 +469,81 @@ aside footer a span {
     font-weight: 450;
 }
 /* #endregion */
+/* #endregion */
+
+/* #region About */
+.about{
+    margin: var(--about-offset);
+    max-width: 90%;
+    /* background-color: pink; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+.about header{
+    font-size: 14px;
+    width: 100%;
+    letter-spacing: 1px;
+    background: var(--wht04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+}
+.about .title .fog {
+    background: radial-gradient(75% 50% at 45% 50%,
+     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    padding: 40px 450px 400px 0px;
+}
+.about .title .name{
+    /* background-color: pink; */
+    width: 405px;
+    /* color: var(--wht03); */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about .title .name h1{
+    font-size: 174px;
+    font-weight: 550;
+    line-height: 0.85;
+}
+.about .title .name footer{
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.about .title .name footer span{
+    font-size: 52px;
+}
+.about .title .name footer .transcription{
+    font-size: 24px;
+}
+.about .title .image-set{
+    width: 600px;
+    height: 455px;
+    /* background-color: pink; */
+    position: relative;
+}
+.about .title .image-set .frame1{
+    transform: none;
+    bottom: 84px;
+    height: 342px;
+    left: 258px;
+    position: absolute;
+    width: 269px;
+}
 /* #endregion */
