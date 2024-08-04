@@ -14,7 +14,8 @@
     --sidebar-left-offset: 30px;
     --sidebar-space: 10px 0;
     /* --sidebar-space: 5px 0; */
-    --sidebar-text-weight: 370;
+    --sidebar-text-weight: 450;
+    --sidebar-logo-text-weight: 550;
     --sidebar-font-size: 0.9125rem;
 
     --main-offset: 35px 65px;
@@ -28,7 +29,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    color: var(--drk06);
+    color: var(--wht04);
     box-sizing: border-box;
 
     -webkit-user-select: none; /* Chrome, Safari, Opera */
@@ -53,16 +54,30 @@ html, body {
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div
+body main div,body main .about img
 {
     color: #0000;
-    background: linear-gradient(#000 0 0) no-repeat;
+    background: linear-gradient(var(--wht04) 0 0) no-repeat;
     background-size: 0% 100%;
     transform:translateY(20px);
     -webkit-background-clip: text;
     background-clip: text;
     animation: t .5s 0s both;
     filter: blur(1em);
+}
+body main .about span,body main .about h1,body main .about h2,
+body main .about h3,body .about main h4,body main .about h5,
+body main .about h6,body .about main a,body main .about p
+body main .about div
+{
+    color: #0000;
+    background: linear-gradient(var(--wht04) 0 0) no-repeat;
+    background-size: 0% 100%;
+    transform:translateY(20px);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: t .5s 0s both;
+    filter: blur(.25em);
 }
 
 @keyframes t{
@@ -119,7 +134,7 @@ aside header .title {
     flex-direction: column;
     /* align-items: center; */
     justify-content:center;
-    font-weight: bold;
+    font-weight: var(--sidebar-logo-text-weight);
     gap: 20px;
 }
 aside header .title .framer {
@@ -490,18 +505,22 @@ aside footer a span {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.about .fog {
+    background: radial-gradient(60% 60% at 60% 50%,
+     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translate(-100px, -60px);
+    padding: 40px 550px 450px 0px;
+}
+/* #region Title */
+/* #region Name */
 .about .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    /* width: 100%; */
     gap: 100px;
-}
-.about .title .fog {
-    background: radial-gradient(75% 50% at 45% 50%,
-     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
-    padding: 40px 450px 400px 0px;
 }
 .about .title .name{
     /* background-color: pink; */
@@ -510,9 +529,9 @@ aside footer a span {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background: var(--gradient);
+    /* background: var(--wht03);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 .about .title .name h1{
     font-size: 174px;
@@ -532,18 +551,72 @@ aside footer a span {
 .about .title .name footer .transcription{
     font-size: 24px;
 }
+/* #endregion */
+/* #region Image Set */
 .about .title .image-set{
     width: 600px;
     height: 455px;
     /* background-color: pink; */
     position: relative;
 }
-.about .title .image-set .frame1{
-    transform: none;
-    bottom: 84px;
-    height: 342px;
-    left: 258px;
-    position: absolute;
-    width: 269px;
+.about .title .image-set .fog{
+    background: radial-gradient(50% 50% at 60% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    padding: 40px 600px 550px 400px;
 }
+.about .title .image-set img{
+    box-shadow: 0 5px 10px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .title .image-set .frame1{
+    position: absolute;
+    height: 342px;
+    width: 269px;
+    bottom: 84px;
+    left: 258px;
+}
+.about .title .image-set .frame2{
+    position: absolute;
+    height: 223px;
+    width: 197px;
+    bottom: 23px;
+    left: 543px;
+}
+.about .title .image-set .frame3{
+    position: absolute;
+    height: 214px;
+    width: 300px;
+    left: 543px;
+}
+.about .title .image-set .frame4{
+    position: absolute;
+    bottom: 40px;
+    height: 271px;
+    left: 42px;
+    width: 200px;
+}
+/* #endregion */
+/* #endregion */
+
+/* #region Info */
+.about .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+}
+.about .info .image-set{
+    width: 600px;
+    height: 455px;
+    /* background-color: pink; */
+    position: relative;
+}
+/* #endregion */
 /* #endregion */
