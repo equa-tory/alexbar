@@ -54,7 +54,7 @@ html, body {
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div,body main .about img
+body main div,body main img
 {
     color: #0000;
     background: linear-gradient(var(--wht04) 0 0) no-repeat;
@@ -262,6 +262,31 @@ aside footer a span {
 /* #endregion */
 /* #endregion */
 
+
+.separator {
+    border-top: 1.5px solid var(--wht02);
+    width: 90%;
+    margin: var(--main-offset);
+    padding: 8px;
+    
+    background: var(--wht01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.separator span {
+    /* color: var(--wht03); */
+    letter-spacing: 2px;
+    font-weight: 250;
+    font-size: 14px;
+}
+.about .separator span {
+    font-size: 12px;
+}
+
+/* #region Main */
+
+
+
 /* #region 404 */
 .page-not-found {
     padding: 40px 23%;
@@ -305,7 +330,7 @@ aside footer a span {
 }
 /* #endregion */
 
-/* #region Main */
+/* #region Index */
 .index{
     overflow-y: scroll;
     overflow-x: hidden;
@@ -337,18 +362,6 @@ aside footer a span {
     margin-top: 0;
     font-size: 45px;
     font-weight: 550;
-}
-.separator {
-    border-top: 1.5px solid var(--wht02);
-    width: 90%;
-    margin: var(--main-offset);
-    padding: 8px;
-}
-.separator span {
-    color: var(--wht03);
-    letter-spacing: 2px;
-    font-weight: 250;
-    font-size: 14px;
 }
 /* #endregion */
 /* #region Content */
@@ -486,8 +499,12 @@ aside footer a span {
 /* #endregion */
 /* #endregion */
 
-/* #region About */
+/* #region About [FOG] */
 .about{
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100dvh;
     margin: var(--about-offset);
     max-width: 90%;
     /* background-color: pink; */
@@ -495,7 +512,7 @@ aside footer a span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 64px;
+    gap: 76px;
 }
 .about header{
     font-size: 14px;
@@ -511,9 +528,9 @@ aside footer a span {
     /* background-color: pink; */
     transform: translate(-100px, -60px);
     padding: 40px 550px 450px 0px;
+    position: absolute;
 }
 /* #region Title */
-/* #region Name */
 .about .title {
     display: flex;
     flex-direction: row;
@@ -522,13 +539,14 @@ aside footer a span {
     /* width: 100%; */
     gap: 100px;
 }
+/* #region Name */
 .about .title .name{
     /* background-color: pink; */
     width: 405px;
-    /* color: var(--wht03); */
     display: flex;
     flex-direction: column;
     gap: 30px;
+    position: relative;
     /* background: var(--wht03);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
@@ -609,14 +627,137 @@ aside footer a span {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
     gap: 100px;
+    width: 100%;
 }
+/* #region Image Set */
 .about .info .image-set{
-    width: 600px;
-    height: 455px;
     /* background-color: pink; */
+    height: 450px;
+    width: 30%;
     position: relative;
 }
+.about .info .image-set .fog{
+    position: absolute;
+    background: radial-gradient(50% 50% at 55% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(30px);
+    right: 0;
+    padding: 240px 400px;
+}
+.about .info .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .info .image-set .frame1{
+    top: 10px;
+    right: 300px;
+    gap: 10px;
+    position: absolute;
+    width: 340px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    height: 260px;
+}
+.about .info .image-set .frame2{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 260px;
+}
 /* #endregion */
+/* #region Text */
+.about .info .text{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about .info .text header span{
+    /* color: var(--wht01);
+    font-weight: 400; */
+    background: var(--wht03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* #endregion */
+/* #endregion */
+
+/* #region Education */
+.about .education{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+}
+/* #region Text */
+.about .education .text{
+    /* background-color: pink; */
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.about .education .text h3{
+    font-size: 26px;
+    font-weight: 550;
+}
+.about .education .text h3:first-child{
+    color: var(--wht04);
+}
+.about .education .text h3:nth-child(2){
+    color: var(--wht03);
+    margin-bottom: 15px;
+}
+.about .education .text span{
+    line-height: 1.5;
+    font-size: 14px;
+}
+/* #endregion */
+/* #region Image Set */
+.about .education .image-set{
+    /* background-color: pink; */
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.about .education .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .education .image-set .fog{
+    position: absolute;
+    background: radial-gradient(50% 50% at 55% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(30px);
+    right: 0;
+    padding: 240px 400px;
+}
+.about .education .image-set .frame1{
+    position: absolute;
+}
+/* #endregion */
+/* #endregion */
+
+/* #endregion */
+
+
+
 /* #endregion */
