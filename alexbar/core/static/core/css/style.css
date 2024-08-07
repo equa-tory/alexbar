@@ -698,6 +698,7 @@ aside footer a span {
     justify-content: center;
     gap: 100px;
     width: 100%;
+    /* margin-bottom: 500px; */
 }
 /* #region Text */
 .about .education .text{
@@ -726,8 +727,9 @@ aside footer a span {
 /* #region Image Set */
 .about .education .image-set{
     /* background-color: pink; */
-    width: 30%;
-    height: 100%;
+    
+    width: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -742,16 +744,99 @@ aside footer a span {
     image-rendering: auto;
 }
 .about .education .image-set .fog{
-    position: absolute;
-    background: radial-gradient(50% 50% at 55% 50%,
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(50% 50% at 50% 50%,
     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
     /* background-color: pink; */
     transform: translateX(30px);
     right: 0;
-    padding: 240px 400px;
+    padding: 50% 70%;
 }
 .about .education .image-set .frame1{
     position: absolute;
+    height: 100%;
+}
+.about .education .image-set .frame1 span{
+    color: var(--wht04);
+    position: relative;
+    z-index: 2;
+}
+/* #endregion */
+/* #endregion */
+/* #region ThingsIlove */
+.about .til {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+}
+/* #region Text */
+.about .til .text{
+    /* background-color: pink; */
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.about .til .text h3{
+    font-size: 26px;
+    font-weight: 550;
+    color: var(--wht04);
+}
+.about .til .text h3:first-child{
+    letter-spacing: 4px;
+    color: var(--wht03);
+    font-size: 16px;
+    font-weight: 350;
+    margin-bottom: 22px;
+}
+/* #endregion */
+/* #region Image Set */
+.about .til .image-set{
+    /* background-color: pink; */
+    width: 600px;
+    height: 455px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.about .til .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .til .image-set .fog{
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(30px);
+    right: 0;
+    padding: 440px 400px;
+}
+.about .til .image-set .frame1{
+    position: absolute;
+    
+    /* right: -113px; */
+    right: -20px;
+    bottom: -50px;
+    width: 300px;
+    height: 300px;
+}
+.about .til .image-set .frame2{
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    top: 0;
+    width: 300px;
 }
 /* #endregion */
 /* #endregion */
