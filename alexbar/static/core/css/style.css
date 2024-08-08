@@ -14,11 +14,13 @@
     --sidebar-left-offset: 30px;
     --sidebar-space: 10px 0;
     /* --sidebar-space: 5px 0; */
-    --sidebar-text-weight: 370;
+    --sidebar-text-weight: 450;
+    --sidebar-logo-text-weight: 550;
     --sidebar-font-size: 0.9125rem;
 
     --main-offset: 35px 65px;
     --about-offset: 35px 120px;
+    --ideas-offset: 35px 24%;
 
 }
 * {
@@ -28,7 +30,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    color: var(--drk06);
+    color: var(--wht04);
     box-sizing: border-box;
 
     -webkit-user-select: none; /* Chrome, Safari, Opera */
@@ -50,20 +52,34 @@ html, body {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
 
 /* Reveal Animation */
-/* body main span,body main h1,body main h2,
+body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div
+body main div,body main img
 {
     color: #0000;
-    background: linear-gradient(#000 0 0) no-repeat;
+    background: linear-gradient(var(--wht04) 0 0) no-repeat;
     background-size: 0% 100%;
     transform:translateY(20px);
     -webkit-background-clip: text;
     background-clip: text;
     animation: t .5s 0s both;
     filter: blur(1em);
-} */
+}
+body main .about span,body main .about h1,body main .about h2,
+body main .about h3,body .about main h4,body main .about h5,
+body main .about h6,body .about main a,body main .about p
+body main .about div
+{
+    color: #0000;
+    background: linear-gradient(var(--wht04) 0 0) no-repeat;
+    background-size: 0% 100%;
+    transform:translateY(20px);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: t .5s 0s both;
+    filter: blur(.25em);
+}
 
 @keyframes t{
     to {
@@ -119,7 +135,7 @@ aside header .title {
     flex-direction: column;
     /* align-items: center; */
     justify-content:center;
-    font-weight: bold;
+    font-weight: var(--sidebar-logo-text-weight);
     gap: 20px;
 }
 aside header .title .framer {
@@ -247,6 +263,31 @@ aside footer a span {
 /* #endregion */
 /* #endregion */
 
+
+.separator {
+    border-top: 1.75px solid var(--wht02);
+    width: 90%;
+    margin: var(--main-offset);
+    padding: 8px;
+    
+    background: var(--wht01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.separator span {
+    /* color: var(--wht03); */
+    letter-spacing: 2px;
+    font-weight: 250;
+    font-size: 14px;
+}
+.about .separator span {
+    font-size: 12px;
+}
+
+/* #region Main */
+
+
+
 /* #region 404 */
 .page-not-found {
     padding: 40px 23%;
@@ -290,7 +331,7 @@ aside footer a span {
 }
 /* #endregion */
 
-/* #region Main */
+/* #region Index */
 .index{
     overflow-y: scroll;
     overflow-x: hidden;
@@ -322,18 +363,6 @@ aside footer a span {
     margin-top: 0;
     font-size: 45px;
     font-weight: 550;
-}
-.separator {
-    border-top: 1.5px solid var(--wht02);
-    width: 90%;
-    margin: var(--main-offset);
-    padding: 8px;
-}
-.separator span {
-    color: var(--wht03);
-    letter-spacing: 2px;
-    font-weight: 250;
-    font-size: 14px;
 }
 /* #endregion */
 /* #region Content */
@@ -455,8 +484,8 @@ aside footer a span {
 /* #region Footer */
 .index footer{
     border-top: 2px solid var(--wht02);
+    /* background-color: pink; */
     width: 100%;
-    height: 2px;
     padding: var(--main-offset);
 
     display: flex;
@@ -471,48 +500,59 @@ aside footer a span {
 /* #endregion */
 /* #endregion */
 
-/* #region About */
+/* #region About [FOG] */
 .about{
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100dvh;
     margin: var(--about-offset);
+    margin-top: 0px;
     max-width: 90%;
     /* background-color: pink; */
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 64px;
+    gap: 76px;
 }
 .about header{
+    margin: var(--about-offset);
     font-size: 14px;
     width: 100%;
     letter-spacing: 1px;
-    background: var(--gradient);
+    background: var(--wht04);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.about .fog {
+    background: radial-gradient(60% 60% at 60% 50%,
+     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translate(-100px, -60px);
+    padding: 40px 550px 450px 0px;
+    position: absolute;
+}
+/* #region Title */
 .about .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    /* width: 100%; */
     gap: 100px;
 }
-.about .title .fog {
-    background: radial-gradient(75% 50% at 45% 50%,
-     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
-    padding: 40px 450px 400px 0px;
-}
+/* #region Name */
 .about .title .name{
     /* background-color: pink; */
     width: 405px;
-    color: var(--wht03);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background: var(--wht04);
+    position: relative;
+    /* background: var(--wht03);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 .about .title .name h1{
     font-size: 174px;
@@ -532,18 +572,354 @@ aside footer a span {
 .about .title .name footer .transcription{
     font-size: 24px;
 }
+/* #endregion */
+/* #region Image Set */
 .about .title .image-set{
     width: 600px;
     height: 455px;
     /* background-color: pink; */
     position: relative;
 }
-.about .title .image-set .frame1{
-    transform: none;
-    bottom: 84px;
-    height: 342px;
-    left: 258px;
-    position: absolute;
-    width: 269px;
+.about .title .image-set .fog{
+    background: radial-gradient(50% 50% at 60% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    padding: 40px 600px 550px 400px;
 }
+.about .title .image-set img{
+    box-shadow: 0 5px 10px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .title .image-set .frame1{
+    position: absolute;
+    height: 342px;
+    width: 269px;
+    bottom: 84px;
+    left: 258px;
+}
+.about .title .image-set .frame2{
+    position: absolute;
+    height: 223px;
+    width: 197px;
+    bottom: 23px;
+    left: 543px;
+}
+.about .title .image-set .frame3{
+    position: absolute;
+    height: 214px;
+    width: 300px;
+    left: 543px;
+}
+.about .title .image-set .frame4{
+    position: absolute;
+    bottom: 40px;
+    height: 271px;
+    left: 42px;
+    width: 200px;
+}
+/* #endregion */
+/* #endregion */
+
+/* #region Info */
+.about .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+}
+/* #region Image Set */
+.about .info .image-set{
+    /* background-color: pink; */
+    height: 450px;
+    width: 30%;
+    position: relative;
+}
+.about .info .image-set .fog{
+    position: absolute;
+    background: radial-gradient(50% 50% at 55% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(30px);
+    right: 0;
+    padding: 240px 400px;
+}
+.about .info .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .info .image-set .frame1{
+    top: 10px;
+    right: 300px;
+    gap: 10px;
+    position: absolute;
+    width: 340px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    height: 260px;
+}
+.about .info .image-set .frame2{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 260px;
+}
+/* #endregion */
+/* #region Text */
+.about .info .text{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about .info .text header{
+    margin: 0;
+}
+.about .info .text header span{
+    /* color: var(--wht01);
+    font-weight: 400; */
+    background: var(--wht03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* #endregion */
+/* #endregion */
+
+/* #region Education */
+.about .education{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+    /* margin-bottom: 500px; */
+}
+/* #region Text */
+.about .education .text{
+    /* background-color: pink; */
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.about .education .text h3{
+    font-size: 26px;
+    font-weight: 550;
+}
+.about .education .text h3:first-child{
+    color: var(--wht04);
+}
+.about .education .text h3:nth-child(2){
+    color: var(--wht03);
+    margin-bottom: 15px;
+}
+.about .education .text span{
+    line-height: 1.5;
+    font-size: 14px;
+}
+/* #endregion */
+/* #region Image Set */
+.about .education .image-set{
+    /* background-color: pink; */
+    
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.about .education .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .education .image-set .fog{
+    position: relative;
+    z-index: 2;
+    background: radial-gradient(60% 60% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(15px);
+    right: 0;
+    padding: 50% 70%;
+}
+.about .education .image-set .frame1{
+    position: absolute;
+    height: 100%;
+}
+.about .education .image-set .frame1 span{
+    color: var(--wht04);
+    position: relative;
+    z-index: 3;
+}
+/* #endregion */
+/* #endregion */
+/* #region ThingsIlove */
+.about .til {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+}
+/* #region Text */
+.about .til .text{
+    /* background-color: pink; */
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.about .til .text h3{
+    font-size: 26px;
+    font-weight: 550;
+    color: var(--wht04);
+}
+.about .til .text h3:first-child{
+    letter-spacing: 4px;
+    color: var(--wht03);
+    font-size: 16px;
+    font-weight: 350;
+    margin-bottom: 22px;
+}
+/* #endregion */
+/* #region Image Set */
+.about .til .image-set{
+    /* background-color: pink; */
+    width: 600px;
+    height: 455px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.about .til .image-set img{
+    box-shadow: 0 2px 5px var(--wht04);
+    border-radius: 6px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+}
+.about .til .image-set .fog{
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
+    /* background-color: pink; */
+    transform: translateX(30px);
+    transform: translateY(100px);
+    right: 0;
+    padding: 340px 400px 340px;
+}
+.about .til .image-set .frame1{
+    position: absolute;
+    
+    /* right: -113px; */
+    right: -20px;
+    bottom: -50px;
+    width: 300px;
+    height: 300px;
+}
+.about .til .image-set .frame2{
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    top: 0;
+    width: 300px;
+}
+/* #endregion */
+/* #endregion */
+
+/* #endregion */
+
+/* #region Ideas */
+.ideas {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100dvh;
+    margin: var(--ideas-offset);
+    max-width: 90%;
+    /* background-color: pink; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ideas .separator{
+    width: 100%;
+    margin: 16px 0;
+}
+/* #region Header */
+.ideas header{
+    width: 100%;
+}
+.ideas header p{
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--wht03);
+    margin-bottom: 16px;
+}
+.ideas header h1{
+    font-size: 32px;
+    color: var(--wht04);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+.ideas header p:last-child{
+    color: var(--wht04);
+    letter-spacing: 1px;
+    /* margin-bottom: -16px; */
+}
+/* #endregion */
+/* #region List */
+.ideas .list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 12px; */
+}
+.ideas .list .idea{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+.ideas .list .idea:hover span{
+    color: var(--wht03);
+}
+.ideas .list .idea span{
+    font-size: 22px;
+    color: var(--wht04);
+    transition: .2s ease;
+}
+.ideas .list .idea p{
+    font-size: 14px;
+    color: var(--wht04);
+}
+/* #endregion */
+/* #endregion */
+
+
+
 /* #endregion */
