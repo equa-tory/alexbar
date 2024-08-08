@@ -2,34 +2,82 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from core.utils import *
+from .models import *
 
 def redir(request):
     return redirect('index')
 
 def index(request):
+
+    framer1 = []
+    framer2 = []
+    framer3 = []
+
+    frames = [framer1, framer2, framer3]
+
+    posts = Post.objects.all()
+
+    for i, p in enumerate(posts):
+        target_array = frames[i % len(frames)]
+        target_array.append(p)
+
+        # if i % 3 == 0:
+        #     framer1.append(p)
+        # elif i % 3 == 1:
+        #     framer2.append(p)
+        # else:
+        #     framer3.append(p)
+
     data = {
         'title': 'Alex Barauskas',
-        'menus': menus
+        'headers': headers,
+        'sections': sections,
+
+        'framer1': framer1,
+        'framer2': framer2,
+        'framer3': framer3
     }
     return render(request, 'core/index.html', context=data)
 
 def about(request):
     data = {
         'title': 'About',
-        'menus': menus
+        'headers': headers,
+        'sections': sections
     }
     return render(request, 'core/about.html', context=data)
 
 def ideas(request):
     data = {
         'title': 'Ideas',
-        'menus': menus
+        'headers': headers,
+        'sections': sections
     }
     return render(request, 'core/ideas.html', context=data)
 
 def pageNotFound(request, exception):
     data = {
         'title': '404',
-        'menus': menus
+        'headers': headers,
+        'sections': sections
     }
     return render(request, 'core/404.html', context=data)
+
+# ============================================================
+# POSTS
+
+def little_giant(request):
+    data = {
+        'title': 'Little Giant',
+        'headers': headers,
+        'sections': sections
+    }
+    return render(request, 'core/posts/little-giant.html', context=data)
+
+def katastasis(request):
+    data = {
+        'title': 'Katastasis',
+        'headers': headers,
+        'sections': sections
+    }
+    return render(request, 'core/posts/katastasis.html', context=data)

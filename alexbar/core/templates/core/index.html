@@ -10,7 +10,8 @@
             tools, websites and so on. With a background in private teams working on 
             game development, Alex brings a wealth of experience and passion to 
             every project. Now, He is eager to create or join a new team to continue
-            building innovative and engaging software.</h1>
+            building innovative and engaging software.
+        </h1>
     </header>
 
     <div class="separator">
@@ -19,7 +20,7 @@
     
     <div class="content">
         <div class="framer">
-            <div class="post">
+            <!-- <div class="post">
                 <a href="#" class="image">
                     <img src="{% static 'core/img/1.png' %}">
                 </a>
@@ -30,18 +31,77 @@
                     </div>
                     <span class="date">2024</span>
                 </div>
+            </div> -->
+
+            {% for p in framer1 %}
+            <div class="post">
+                <a href="{% url p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">{{p.name}}</span>
+                        <span class="description">{{p.description}}</span>
+                    </div>
+                    <span class="date">{{p.date|date:"Y"}}</span>
+                </div>
             </div>
+            {% endfor %}
+
         </div>
+
+
         <div class="framer">
-            
+            {% for p in framer2 %}
+            <div class="post">
+                <a href="{% url p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">{{p.name}}</span>
+                        <span class="description">{{p.description}}</span>
+                    </div>
+                    <span class="date">{{p.date|date:"Y"}}</span>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+
+
         <div class="framer">
+            <!-- <div class="long-post post">
+                <a href="#" class="image">
+                    <img src="{% static 'core/img/about/im.png' %}">
+                    <img src="{% static 'core/img/1.png' %}">
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">Little Giant</span>
+                        <span class="description">The Game</span>
+                    </div>
+                    <span class="date">2024</span>
+                </div>
+            </div> -->
             
+            {% for p in framer3 %}
+            <div class="post">
+                <a href="{% url p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">{{p.name}}</span>
+                        <span class="description">{{p.description}}</span>
+                    </div>
+                    <span class="date">{{p.date|date:"Y"}}</span>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
     <footer>
         <span>Alex Barauskas</span>
-
         <span><a href="https://ethanchng.com">This web site uses a design by Ethan Chng</a> © 2024</span>
     </footer>
 </div>

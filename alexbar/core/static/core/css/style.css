@@ -3,11 +3,15 @@
     --wht02: #f0f0f0;
     --wht03: #A0A5AC;
     --wht04: #3b3d41;
+    --wht05: #fbfbfd;
+    --wht06: #eeeeee;
 
     --drk01: #181a1b;
     --drk02: #202325;
     --drk03: #b1b1b1;
     --drk04: #e4e4e4;
+    --drk05: #202325;
+    --drk06: #202325;
 
     --gradient: linear-gradient(90deg, var(--wht03) 0%, var(--wht04) 100%);
 
@@ -111,6 +115,8 @@ body.dark-theme {
     --wht02: var(--drk02);
     --wht03: var(--drk03);
     --wht04: var(--drk04);
+    --wht05: var(--drk05);
+    --wht06: var(--drk06);
 }
 
 /* #region Sidebar */
@@ -329,6 +335,9 @@ aside footer a span {
     var(--wht04) 0px 2.28853px 10.28853px -1.5px,
     var(--wht03) 0px 10px 10px -3.75px;
 }
+.page-not-found a span{
+    color: var(--wht03);
+}
 /* #endregion */
 
 /* #region Index */
@@ -395,8 +404,9 @@ aside footer a span {
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 16px;
-    height: min-content;
     justify-content: flex-start;
+    /* height: min-content; */
+    min-height: 335px;
     width: 100%;
 }
 .fog {
@@ -411,12 +421,12 @@ aside footer a span {
     user-select: none;
 }
 .index .content .framer .post .image {
-    /* !!!!!!!!!!!!!!!!!!CHANGE\/!!!!!!!!!!!!!!!! */
-    background: var(--wht02); 
+    background: var(--wht05);
     border-radius: 6px;
+    border: 1px solid var(--wht06);
     aspect-ratio: 1.5/1;
     flex: none;
-    height: var(auto, 169px);
+    /* height: var(auto, 169px); */
     width: 100%;
     box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
         var(--wht03) 0px 2.28853px 2.28853px -2.33333px, 
@@ -425,25 +435,34 @@ aside footer a span {
 
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    gap: 10px;
+    /* gap: 10px; */
     justify-content: center;
     transition: .3s ease;
 }
 .index .content .framer .post .image:hover {
-    /* box-shadow: rgba(28, 29, 33, 0.133) 0px 0.60219px 0.60219px -1.16667px, 
-        rgba(28, 29, 33, 0.52) 0px 2.28853px 10.28853px -2.33333px, 
-        rgba(28, 29, 33, 0.06) 0px 10px 10px -3.5px,
-        rgba(223, 224, 225, 0.3) 0px 0px 0px 0px; */
     box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
         var(--wht03) 0px 2.28853px 10.28853px -2.33333px, 
         var(--wht02) 0px 10px 10px -3.5px,
         var(--wht01) 0px 0px 0px 0px;
 }
 .index .content .framer .post .image img {
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
     width: 32%;
+    /* border: 1px solid var(--wht06); */
+    border-radius: 6px;
+    min-width: 32%;
+    max-width: 100%;
+    /* width: 100%; */
+}
+.index .content .framer .long-post .image {
+    background-color: var(--wht05);
+}
+.index .content .framer .long-post .image img{
+    width: 100%;
+    margin: 1%;
+    max-width: 98%;
 }
 .index .content .framer .post .framer {
     display: flex;

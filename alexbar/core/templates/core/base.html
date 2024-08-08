@@ -42,13 +42,13 @@
                         </svg>
                         
                 </div>
-                {% for m in menus %}
-                    <a class="title-btn" href="{% url m.url %}">{{m.title}}</a>
+                {% for h in headers %}
+                    <a class="title-btn" href="{% url h.url %}">{{h.title}}</a>
                 {% endfor %}
             </div>
         </header>
         <menu>
-            <span class="title">GAMES</span>
+            <!-- <span class="title">GAMES</span>
             <div class="folder">
                 <span class="folder-title">Unity</span>
                 <div class="container">
@@ -69,7 +69,21 @@
                     <a>Little Giant</a>
                     <a>Ink Cycle</a>
                 </div>
+            </div> -->
+            
+            {% for s in sections %}
+            <span class="title">{{s.name}}</span>
+            {% for c in s.categories %}
+            <div class="folder">
+                <a class="folder-title">{{c.name}}</a>
+                <div class="container">
+                    {% for p in c.posts.all %}
+                    <a href="{% url p.slug %}">{{p.name}}</a>
+                    {% endfor %}
+                </div>
             </div>
+            {% endfor %}
+            {% endfor %}
         </menu>
         <footer>
             <span>CONTACT</span>
