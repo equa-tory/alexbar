@@ -1,8 +1,10 @@
 from .models import *
 
 headers = [
-    {'title': 'About', 'url':'about'},
-    {'title': 'Ideas', 'url':'ideas'},
+    {'id': 'en', 'title': 'About', 'url':'about'},
+    {'id': 'en', 'title': 'Ideas', 'url':'ideas'},
+    {'id': 'ru', 'title': 'Обо мне', 'url':'about'},
+    {'id': 'ru', 'title': 'Идеи', 'url':'ideas'},
 ]
 
 sections = []

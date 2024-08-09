@@ -24,6 +24,7 @@ class Post(models.Model):
     description = models.CharField(max_length=41, db_index=True, verbose_name="Description")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Creation date")
     preview_image = models.ImageField(upload_to='posts/previews/', null=False, blank=False)
+    small_preview = models.BooleanField(default=False, verbose_name="Small preview")
     slug = models.SlugField(max_length=100, null=False, blank=False, unique=True, db_index=True, verbose_name="URL")
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE)
 
@@ -31,8 +32,15 @@ class Post(models.Model):
         return f"Post {self.name} of {self.date}"
     
     def save(self, *args, **kwargs):
-        super(Post, self).save(*args, **kwargs)
-        self.category.posts.add(self)
+        if self.category != None:
+            self.category.posts.add(self)
+        else:
+            cat = Category.objects.all()
+            for c in cat:
+                c.posts.remove(self)
+
+        super(Post, self).save(*args, **kwargs) 
+
     
     def delete(self, *args, **kwargs):
         if self.preview_image:

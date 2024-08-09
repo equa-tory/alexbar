@@ -16,13 +16,10 @@ def index(request):
     posts = Post.objects.all().order_by('position')
     for i, p in enumerate(posts):
         if i % 3 == 0:
-            print("1!")
             framer1.append(p)
         elif i % 3 == 1:
-            print("2!")
             framer2.append(p)
         else:
-            print("3!")
             framer3.append(p)
         # target_array = frames[i % len(frames)]
         # target_array.append(p)
@@ -66,18 +63,27 @@ def pageNotFound(request, exception):
 # ============================================================
 # POSTS
 
-def little_giant(request):
+def post(request, slug):
+    post = Post.objects.get(slug=slug)
     data = {
-        'title': 'Little Giant',
+        'title': post.name,
         'headers': headers,
-        'sections': sections
+        'sections': sections,
     }
-    return render(request, 'core/posts/little-giant.html', context=data)
+    return render(request, f'core/posts/{post.slug}.html', context=data)
 
-def katastasis(request):
-    data = {
-        'title': 'Katastasis',
-        'headers': headers,
-        'sections': sections
-    }
-    return render(request, 'core/posts/katastasis.html', context=data)
+# def little_giant(request):
+#     data = {
+#         'title': 'Little Giant',
+#         'headers': headers,
+#         'sections': sections
+#     }
+#     return render(request, 'core/posts/little-giant.html', context=data)
+
+# def katastasis(request):
+#     data = {
+#         'title': 'Katastasis',
+#         'headers': headers,
+#         'sections': sections
+#     }
+#     return render(request, 'core/posts/katastasis.html', context=data)

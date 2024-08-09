@@ -10,6 +10,5 @@ urlpatterns = [
     path('ideas',views.ideas,name='ideas'),
 
     # posts
-    path('little-giant',views.little_giant,name='little-giant'),
-    path('katastasis',views.katastasis,name='katastasis'),
+    path('post/<slug>',views.post,name='post'),
 ]

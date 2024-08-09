@@ -4,27 +4,41 @@
 {% block content %}
 <div class="index">
     <header>
-        <span>Hello there, привет!</span>
-        <h1>
+        <span id="en">Hello there, привет!</span>
+        <span id="ru">Привет, hello there!</span>
+        <h1 id="en">
             Alex is a programmer specializing in creating games, applications, bots, 
             tools, websites and so on. With a background in private teams working on 
             game development, Alex brings a wealth of experience and passion to 
             every project. Now, He is eager to create or join a new team to continue
-            building innovative and engaging software.
+            building in the team.
+        </h1>
+        <h1 id="ru">
+            Алексаднр - программист, специализирующийся на создании игр, приложений, ботов, инструментов,
+            веб-сайтов и так далее. Имея опыт работы в частных командах, занимающихся разработкой игр,
+            Алексаднр привносит богатый опыт и страсть в каждый проект. Теперь он горит желанием создать новую
+            команду или присоединиться к ней, чтобы продолжить разработку в комманде.
         </h1>
     </header>
 
     <div class="separator">
-        <span>CRAFT</span>
+        <span id="en">CRAFT</span>
+        <span id="ru">РАБОТЫ</span>
     </div>
     
     <div class="content">
         <div class="framer">
             {% for p in framer1 %}
             <div class="post">
-                <a href="{% url p.slug %}" class="image">
+                {% if p.small_preview == True %}
+                <a href="{% url 'post' p.slug %}" class="small-image image">
                     <img src="{{p.preview_image.url}}">
                 </a>
+                {% else %}
+                <a href="{% url 'post' p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
@@ -40,9 +54,15 @@
         <div class="framer">
             {% for p in framer2 %}
             <div class="post">
-                <a href="{% url p.slug %}" class="image">
+                {% if p.small_preview == True %}
+                <a href="{% url 'post' p.slug %}" class="image small-image">
                     <img src="{{p.preview_image.url}}">
                 </a>
+                {% else %}
+                <a href="{% url 'post' p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
@@ -72,9 +92,15 @@
             
             {% for p in framer3 %}
             <div class="post">
-                <a href="{% url p.slug %}" class="image">
+                {% if p.small_preview == True %}
+                <a href="{% url 'post' p.slug %}" class="image small-image">
                     <img src="{{p.preview_image.url}}">
                 </a>
+                {% else %}
+                <a href="{% url 'post' p.slug %}" class="image">
+                    <img src="{{p.preview_image.url}}">
+                </a>
+                {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
@@ -87,8 +113,10 @@
         </div>
     </div>
     <footer>
-        <span>Alex Barauskas</span>
-        <span><a href="https://ethanchng.com">This web site uses a design by Ethan Chng</a> © 2024</span>
+        <span id="en">Alex Barauskas</span>
+        <span id="ru">Алексаднр Бараускас</span>
+        <span id="en"><a href="https://ethanchng.com">This web site uses a design by Ethan Chng</a> © 2024</span>
+        <span id="ru"><a href="https://ethanchng.com">Этот сайт использует дизайн от Итана Чанга</a> © 2024</span>
     </footer>
 </div>
 {% endblock %} 

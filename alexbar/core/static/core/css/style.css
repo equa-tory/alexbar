@@ -25,6 +25,7 @@
     --main-offset: 35px 65px;
     --about-offset: 35px 120px;
     --ideas-offset: 35px 24%;
+    --post-offset: 35px 24%;
 
 }
 * {
@@ -59,7 +60,7 @@ html, body {
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div,body main img
+body main div,body main img,.p p
 {
     color: #0000;
     background: linear-gradient(var(--wht04) 0 0) no-repeat;
@@ -128,6 +129,8 @@ aside {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: var(--wht01);
+    z-index: 16;
 }
 /* #region Header */
 aside header {
@@ -167,6 +170,10 @@ aside header .title .framer svg {
 }
 aside header .title .framer svg circle, aside header .title .framer svg ellipse{
     fill:var(--wht04);
+    transition: .3s ease;
+}
+aside header .title .framer svg:hover circle, aside header .title .framer svg:hover ellipse{
+    fill:var(--wht03);
 }
 aside header .title .title-btn {
     font-size: 20px;
@@ -267,11 +274,33 @@ aside footer a span {
     transition: .3s ease;
 }
 /* #endregion */
+/* #region Language Toggle */
+aside .language-toggle {
+    margin-top: auto;
+    width: 100%;
+    height: 55px;
+    /* background-color: pink; */
+    padding-left: var(--sidebar-left-offset);
+}
+aside .language-toggle svg {
+    width: 40px;
+    height: 40px;
+}
+aside .language-toggle svg path {
+    fill: var(--wht04);
+    transition: .3s ease;
+}
+aside .language-toggle:hover svg path {
+    fill: var(--wht03);
+}
+/* #endregion */
 /* #endregion */
 
+.language { display: none; }
+.language.active { display: block; }
 
 .separator {
-    border-top: 1.75px solid var(--wht02);
+    border-top: 2px solid var(--wht02);
     width: 90%;
     margin: var(--main-offset);
     padding: 8px;
@@ -290,9 +319,19 @@ aside footer a span {
     font-size: 12px;
 }
 
+.shadow {
+    box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
+        var(--wht03) 0px 2.28853px 2.28853px -2.33333px, 
+        var(--wht02) 0px 10px 10px -3.5px,
+        var(--wht01) 0px 0px 0px 0px;
+}
+
 /* #region Main */
 
-
+main{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 /* #region 404 */
 .page-not-found {
@@ -448,13 +487,16 @@ aside footer a span {
         var(--wht01) 0px 0px 0px 0px;
 }
 .index .content .framer .post .image img {
-    /* aspect-ratio: 1/1; */
-    width: 32%;
-    /* border: 1px solid var(--wht06); */
     border-radius: 6px;
-    min-width: 32%;
     max-width: 100%;
-    /* width: 100%; */
+    max-height: 335px;
+    height: 100%;
+}
+.index .content .framer .post .small-image img {
+    border-radius: 6px;
+    max-height: 335px;
+    max-width: 32%;
+    height: auto;
 }
 .index .content .framer .long-post .image {
     background-color: var(--wht05);
@@ -503,7 +545,6 @@ aside footer a span {
 /* #region Footer */
 .index footer{
     border-top: 2px solid var(--wht02);
-    /* background-color: pink; */
     width: 100%;
     padding: var(--main-offset);
 
@@ -522,9 +563,9 @@ aside footer a span {
 /* #region About [FOG] */
 .about{
     
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100dvh;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+    /* height: 100dvh; */
     margin: var(--about-offset);
     margin-top: 0px;
     max-width: 90%;
@@ -774,7 +815,7 @@ aside footer a span {
     background: radial-gradient(60% 60% at 50% 50%,
     rgba(255, 255, 255, 0) 0%, var(--wht01) 100%);
     /* background-color: pink; */
-    transform: translateX(15px);
+    transform: translateX(25px);
     right: 0;
     padding: 50% 70%;
 }
@@ -871,9 +912,9 @@ aside footer a span {
 
 /* #region Ideas */
 .ideas {
-    overflow-y: scroll;
+    /* overflow-y: scroll;
     overflow-x: hidden;
-    height: 100dvh;
+    height: 100dvh; */
     margin: var(--ideas-offset);
     max-width: 90%;
     /* background-color: pink; */
@@ -938,6 +979,162 @@ aside footer a span {
 }
 /* #endregion */
 /* #endregion */
+
+
+
+
+
+/* #region Post */
+.in-post {
+    /* background-color: #154940; */
+    padding: var(--post-offset);
+    /* height: 100dvh; */
+}
+/* #region Elements */
+.header {
+    background-color: var(--wht05);
+    width: 100%;
+    height: 725px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.img6 {
+    width: 100%;
+    padding: 100px;
+    display: flex;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* gap: 50px; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.img6 img {
+    width: 600px;
+    border-radius: 6px;
+    margin: 0 25px;
+}
+
+.vert10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vert {
+    display: flex;
+    flex-direction: column;
+}
+
+.hor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.h1 h1 {
+    font-size: 55px;
+    color: var(--wht04);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.r1 h1 {
+    font-size: 55px;
+    color: var(--wht03);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.h3 h3 {
+    font-size: 18px;
+    color: var(--wht04);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.r3 h3 {
+    font-size: 18px;
+    color: var(--wht03);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.span span {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.p p {
+   font-weight: 400;
+   font-size: 16px;
+}
+
+.in-post .h1 a {
+    color: var(--wht03);
+    font-weight: bolder;
+    font-size: 55px;
+}
+.in-post .r1 a {
+    color: var(--wht04);
+    font-weight: bolder;
+    font-size: 55px;
+}
+.in-post .h3 a {
+    color: var(--wht03);
+    font-weight: bolder;
+    font-size: 18px;
+}
+.in-post .r3 a {
+    color: var(--wht04);
+    font-weight: bolder;
+    font-size: 18px;
+}
+.in-post .p a {
+    color: var(--wht03);
+    font-weight: bolder;
+    font-size: 16px;
+}
+.in-post .span a {
+    color: var(--wht03);
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.in-post .separator {
+    width: 100%;
+    margin: 39px 0 18px;
+}
+
+.long-separator {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+
+
+
+
+/* #endregion */
+/* #endregion */
+
 
 
 

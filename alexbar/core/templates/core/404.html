@@ -4,9 +4,12 @@
 
 <div class="page-not-found">
     <h5 class="reveal">404</h5>
-    <h1 class="reveal">Unfortunately, this page does not exist.<br>Maybe it will in the future!</h1>
-    <h5 class="reveal">In the mean time feel free to navigate to another page on the sidebar or return to the homepage.</h5>
+    <h1 class="reveal" id="en">Unfortunately, this page does not exist.<br>Maybe it will in the future!</h1>
+    <h1 class="reveal" id="ru">К сожалению, эта страница не существует.<br>Может быть она появится в будущем!</h1>
+    <h5 class="reveal" id="en">In the mean time feel free to navigate to another page on the sidebar or return to the homepage.</h5>
+    <h5 class="reveal" id="ru">А сейчас вы можете перейти на другую страницу в боковом меню или вернуться на главную.</h5>
 
-    <a class="reveal" href="{% url 'redir' %}"><span>Return home</span></a>
+    <a class="reveal" href="{% url 'redir' %}" id="en"><span>Return home</span></a>
+    <a class="reveal" href="{% url 'redir' %}" id="ru"><span>Вернуться на главную</span></a>
 </div>
 {% endblock %} 

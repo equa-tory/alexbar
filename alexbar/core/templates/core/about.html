@@ -4,7 +4,8 @@
 {% block content %}
 <div class="about">
 
-    <header><p>LET THAT FOG SETTLE...</p></header>
+    <header id="en"><p>LET THAT FOG SETTLE...</p></header>
+    <header id="ru"><p>ДАВАЙТЕ РАЗВЕЕМ ЭТОТ ТУМАН...</p></header>
 
     <div class="title">
         <div class="name">
@@ -37,7 +38,8 @@
             <div class="fog"></div>
             <div class="frame1">
                 <img src="{% static 'core/img/about/5291913958447505453.jpg' %}">
-                <span>My craft began here</span>
+                <span id="en">My craft began here</span>
+                <span id="ru">Всё началось здесь</span>
             </div>
             <div class="frame2">
                 <img src="{% static 'core/img/about/5291913958447505425.jpg' %}">
@@ -45,51 +47,77 @@
         </div>
         <div class="text">
             <header>
-                <span>INFO</span>
+                <span id="en">INFO</span>
+                <span id="ru">ИНФОРМАЦИЯ</span>
             </header>
-            <span>
+            <span id="en">
                 I’m a programmer living in Podolsk, Russia.
             </span>
-            <span>
-                For a long time, I’ve been programming different things like tools, bots, utils, websites, games, programs and so on. 
-                I've always wanted to do everything from the scratch and only then search for reference to improve my skills.
-                I really enjoy the process of learning and improving myself on different technologies, apis, frameworks and languages that I use.
+            <span id="ru">
+                Я программист, живу в Подольске, Россия.
             </span>
-            <span>
+            <span id="en">
+                For a long time, I’ve been programming different things like tools, bots, utils, websites, games, programs and so on. 
+                I've always wanted to do everything from the scratch and only then search for reference, so I've improved my skills for six years.
+                I really enjoy the process of learning and improving myself on different technologies, apis, frameworks and languages that I usually use.
+            </span>
+            <span id="ru">
+                Долгие годы я разрабатывал различное по инструменты, боты, утилиты, веб-сайты, игры, программы и др.
+                Я всегда хотел сделать все с нуля и только потом искать примеры, так я улучшал свои навыки на протяжении шести лет.
+                Мне очень нравится процесс изучения и улучшения соих навыков на различных технологиях, api, фреймворках и языках, которые я постоянно использую.
+            </span>
+            <span id="en">
                 During my sophomore year, I decided to pivot my career towards programming because I wanted to build impactful solutions at scale.
                 Although technology and software development continue to evolve rapidly, what remains at the core of programming is its potential
                 to enhance lives through innovation, functionality, and user experience. Instead of constructing physical spaces, we're now creating
                 digital environments that users interact with daily. 
             </span>
+            <span id="ru">
+                Во время второго симестра, я чётко решил нацелиться на программирование, потому что я хотел создавать эффективные решения в масштабе.
+                Несмотря на то, что технологии и разработка программного обеспечения продолжают стремительно развиваться, в основе программирования по-прежнему лежит его способность
+                улучшать качество жизни за счет инноваций, функциональности и удобства для пользователей. Вместо создания физических пространств мы теперь создаем цифровую среду, с которой пользователи взаимодействуют ежедневно.
+            </span>
         </div>
     </div>
 
     <div class="separator">
-        <span>EDUCATION</span>
+        <span id="en">EDUCATION</span>
+        <span id="ru">ОБУЧЕНИЕ</span>
     </div>
 
     <div class="education">
-        <div class="text">
+        <div class="text" id="en">
             <h3>College of Programming, Podolsk</h3>
             <h3>Technical and Economic College "TEC"</h3>
             <!-- <span>Bachelors of Arts in Architecture - Undergraduate Thesis</span>
             <span>Berkeley Certification in Design Innovation (BCDI)</span> -->
         </div>
+        <div class="text" id="ru">
+            <h3>Колледж Программирования, Подольск</h3>
+            <h3>Технико Экономический Колледж "ТЭК"</h3>
+        </div>
         <div class="image-set">
             <div class="fog"></div>
             <div class="frame1">
                 <img src="{% static 'core/img/about/XXXL.jpg' %}">
-                <span>College during the autumn</span>
+                <span id="en">College during the autumn</span>
+                <span id="ru">Колледж во время осени</span>
             </div>
         </div>
     </div>
 
     <div class="til">
-        <div class="text">
+        <div class="text" id="en">
             <h3>THINGS I LOVE</h3>
-            <h3>Architecture, aesthetics of Japan</h3>
+            <h3>Architecture and aesthetics of Japan</h3>
             <h3>Tea, Cosiness and Music</h3>
             <h3>Reasonable people who can think for themselves</h3>
+        </div>
+        <div class="text" id="ru">
+            <h3>ЧТО Я ЛЮБЛЮ</h3>
+            <h3>Архитектура и эстетика Японии</h3>
+            <h3>Чай, уют и музыка</h3>
+            <h3>Рассудительные люди, способные мыслить самостоятельно</h3>
         </div>
         <div class="image-set">
             <div class="fog"></div>
