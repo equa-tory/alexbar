@@ -256,7 +256,8 @@ aside footer a {
 aside footer a:hover { 
     color: var(--wht03);
 }
-aside footer span {
+aside footer span p {
+    color: var(--wht03);
     font-size: var(--sidebar-font-size);
     font-weight: var(--sidebar-text-weight);
 }
@@ -552,10 +553,17 @@ main{
     align-items: center;
     justify-content: space-between;
 }
-.index footer span {
-    color: var(--wht03);
+.index footer span, .index footer a {
+    color: var(--wht04);
     font-size: 14px;
     font-weight: 450;
+}
+.index footer a{
+    color: var(--wht04);
+    transition: .3 ease;
+}
+.index footer a:hover {
+    color: var(--wht03);
 }
 /* #endregion */
 /* #endregion */
@@ -893,17 +901,18 @@ main{
     position: absolute;
     
     /* right: -113px; */
-    right: -20px;
+    right: -50px;
     bottom: -50px;
     width: 300px;
     height: 300px;
 }
 .about .til .image-set .frame2{
     position: absolute;
-    bottom: 0;
-    left: 1px;
-    top: 0;
-    width: 300px;
+    /* bottom: 0; */
+    left: -50px;
+    /* top: 30px; */
+    margin-top: 30px;
+    width: 370px;
 }
 /* #endregion */
 /* #endregion */
