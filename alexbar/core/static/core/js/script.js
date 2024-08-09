@@ -50,5 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
     changeLanguage(language);
     localStorage.setItem('language', language);
   });
+
+  function saveScrollPosition() {
+    localStorage.setItem('scrollPos', window.scrollY);
+  }
+  function restoreScrollPosition() {
+      const scrollPos = localStorage.getItem('scrollPos');
+      if (scrollPos !== null) {
+          window.scrollTo(0, parseFloat(scrollPos));
+      }
+  }
+  window.addEventListener('beforeunload', saveScrollPosition);
+  window.addEventListener('load', restoreScrollPosition);
 });
   

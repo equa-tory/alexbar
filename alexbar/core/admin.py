@@ -17,10 +17,12 @@ class CategoryAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     model = Post
     list_display = [
+        'position',
         'name',
         'description', 
-        'date', 
-        'preview_image', 
+        'date',
+        'preview_image',
+        'small_preview',
         'slug', 
         'category',
     ]
@@ -28,6 +30,12 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('category',)
     ordering = ['position']
 
+class IdeaAdmin(admin.ModelAdmin):
+    model = Idea
+    list_display = ['name', 'date']
+    ordering = ['date']
+
 admin.site.register(Section, SectionAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Idea, IdeaAdmin)

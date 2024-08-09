@@ -51,3 +51,14 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['date']
+
+# ============================================================
+# IDEAS
+
+class Idea(models.Model):
+    name = models.CharField(max_length=70, db_index=True, verbose_name="Name")
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Creation date")
+    slug = models.SlugField(max_length=100, null=True, blank=True, unique=True, db_index=True, verbose_name="URL")
+
+    def __str__(self):
+        return f"Idea {self.name} of {self.date}"

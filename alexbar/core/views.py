@@ -45,10 +45,12 @@ def about(request):
     return render(request, 'core/about.html', context=data)
 
 def ideas(request):
+    ideas = Idea.objects.all().order_by('date')
     data = {
         'title': 'Ideas',
         'headers': headers,
-        'sections': sections
+        'sections': sections,
+        'ideas': ideas
     }
     return render(request, 'core/ideas.html', context=data)
 
