@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="{% static 'core/manifest.json' %}">
+    <link rel="shortcut icon" href="#">
     <link rel="icon" type="image/x-icon" href="{% static 'core/img/logo.ico' %}"/>
     <title>Alex Barauskas</title>
     <!-- <title>{{ title }}</title> -->
@@ -13,7 +14,7 @@
     <meta name="csrf_token" content="{{ csrf_token }}">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <meta http-equiv="refresh" content="1"> -->
+    <meta http-equiv="refresh" content="1">
 </head>
 <body class="">
     
@@ -84,6 +85,15 @@
             </div>
             {% endfor %}
             {% endfor %}
+
+            <!-- <span class="title">OTHER</span>
+            {% for p in posts %}
+            {% if p.category.name == null %}
+            <div class="folder">
+                <a class="folder-title" href="{% url p.slug %}">{{p.name}}</a>
+            </div>
+            {% endif %}
+            {% endfor %} -->
         </menu>
         <footer>
             <span>CONTACT</span>

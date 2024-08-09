@@ -8,30 +8,30 @@ def redir(request):
     return redirect('index')
 
 def index(request):
-
     framer1 = []
     framer2 = []
     framer3 = []
+    # frames = [framer1, framer2, framer3]
 
-    frames = [framer1, framer2, framer3]
-
-    posts = Post.objects.all()
-
+    posts = Post.objects.all().order_by('position')
     for i, p in enumerate(posts):
-        target_array = frames[i % len(frames)]
-        target_array.append(p)
-
-        # if i % 3 == 0:
-        #     framer1.append(p)
-        # elif i % 3 == 1:
-        #     framer2.append(p)
-        # else:
-        #     framer3.append(p)
+        if i % 3 == 0:
+            print("1!")
+            framer1.append(p)
+        elif i % 3 == 1:
+            print("2!")
+            framer2.append(p)
+        else:
+            print("3!")
+            framer3.append(p)
+        # target_array = frames[i % len(frames)]
+        # target_array.append(p)
 
     data = {
         'title': 'Alex Barauskas',
         'headers': headers,
         'sections': sections,
+        'posts': posts,
 
         'framer1': framer1,
         'framer2': framer2,

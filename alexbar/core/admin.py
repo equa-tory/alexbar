@@ -25,6 +25,8 @@ class PostAdmin(admin.ModelAdmin):
         'category',
     ]
     prepopulated_fields = {"slug": ("name",)}
+    list_filter = ('category',)
+    ordering = ['position']
 
 admin.site.register(Section, SectionAdmin)
 admin.site.register(Category, CategoryAdmin)

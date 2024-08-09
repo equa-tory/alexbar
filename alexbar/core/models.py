@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 class Section(models.Model):
     name = models.CharField(max_length=22, db_index=True, verbose_name="Section name")
@@ -18,6 +19,7 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
 class Post(models.Model):
+    position = models.IntegerField(default=0, unique=True, db_index=True, verbose_name="Position")
     name = models.CharField(max_length=35, db_index=True, verbose_name="Name")
     description = models.CharField(max_length=41, db_index=True, verbose_name="Description")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Creation date")
@@ -28,5 +30,16 @@ class Post(models.Model):
     def __str__(self):
         return f"Post {self.name} of {self.date}"
     
+    def save(self, *args, **kwargs):
+        super(Post, self).save(*args, **kwargs)
+        self.category.posts.add(self)
+    
+    def delete(self, *args, **kwargs):
+        if self.preview_image:
+            if os.path.isfile(self.preview_image.path):
+                os.remove(self.preview_image.path)
+        
+        super(Post, self).delete(*args, **kwargs)
+
     class Meta:
         ordering = ['date']
