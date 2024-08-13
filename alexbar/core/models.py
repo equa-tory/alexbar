@@ -20,10 +20,10 @@ class Category(models.Model):
 
 class Post(models.Model):
     position = models.IntegerField(default=0, unique=True, db_index=True, verbose_name="Position")
-    name = models.CharField(max_length=35, db_index=True, verbose_name="Name")
-    description = models.CharField(max_length=41, db_index=True, verbose_name="Description")
+    name = models.CharField(max_length=20, db_index=True, verbose_name="Name")
+    description = models.CharField(max_length=41, blank=True, null=True, db_index=True, verbose_name="Description")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Creation date")
-    preview_image = models.ImageField(upload_to='posts/previews/', null=False, blank=False)
+    preview_image = models.ImageField(upload_to='posts/previews/', blank=True)
     small_preview = models.BooleanField(default=False, verbose_name="Small preview")
     slug = models.SlugField(max_length=100, null=False, blank=False, unique=True, db_index=True, verbose_name="URL")
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE)
@@ -38,6 +38,13 @@ class Post(models.Model):
             cat = Category.objects.all()
             for c in cat:
                 c.posts.remove(self)
+
+        if self.position is 0:
+            if Post.objects.count() > 0:
+                max_position = Post.objects.aggregate(models.Max('position'))['position__max']
+                self.position = max_position + 1
+            else:
+                self.position = 1
 
         super(Post, self).save(*args, **kwargs) 
 

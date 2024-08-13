@@ -27,6 +27,11 @@
     --ideas-offset: 35px 24%;
     --post-offset: 35px 24%;
 
+    --phone-main-offset: 100px 25px;
+    --phone-about-offset: 100px 25px;
+    --phone-ideas-offset: 100px 25px;
+    --phone-post-offset: 100px 25px;
+    
 }
 * {
     margin: 0;
@@ -60,7 +65,8 @@ html, body {
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div,body main img,.p p
+body main div,body main img,.p p,
+body main .ideas *
 {
     color: #0000;
     background: linear-gradient(var(--wht04) 0 0) no-repeat;
@@ -95,11 +101,6 @@ body main .about div
 }
 
 /* --------------------------------------------------------------------------- */
-
-/* @media only screen
-and (min-device-width: 375px) 
-and (max-device-width: 812px) 
-and (-webkit-device-pixel-ratio: 3) {} */
 
 body {
     position: fixed; 
@@ -299,7 +300,6 @@ aside .language-toggle:hover svg path {
 
 .language { display: none; }
 .language.active { display: block; }
-
 .separator {
     border-top: 2px solid var(--wht02);
     width: 90%;
@@ -313,13 +313,12 @@ aside .language-toggle:hover svg path {
 .separator span {
     /* color: var(--wht03); */
     letter-spacing: 2px;
-    font-weight: 250;
+    font-weight: 300;
     font-size: 14px;
 }
 .about .separator span {
     font-size: 12px;
 }
-
 .shadow {
     box-shadow: var(--wht04) 0px 0.60219px 0.60219px -1.16667px, 
         var(--wht03) 0px 2.28853px 2.28853px -2.33333px, 
@@ -329,7 +328,9 @@ aside .language-toggle:hover svg path {
 
 /* #region Main */
 
-main{
+main {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -382,8 +383,8 @@ main{
 
 /* #region Index */
 .index{
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
     height: 100dvh;
 }
 /* #region Header */
@@ -974,7 +975,7 @@ main{
     justify-content: space-between;
     margin: 6px 0;
 }
-.ideas .list .idea:hover span{
+.ideas .list .slug-idea:hover span{
     color: var(--wht03);
 }
 .ideas .list .idea span{
@@ -988,10 +989,6 @@ main{
 }
 /* #endregion */
 /* #endregion */
-
-
-
-
 
 /* #region Post */
 .in-post {
@@ -1144,7 +1141,123 @@ main{
 /* #endregion */
 /* #endregion */
 
-
-
-
 /* #endregion */
+
+
+/* ============= Mobile ============= */
+/* @media only screen
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-device-pixel-ratio: 3) {} */
+@media (max-width: 800px) {
+    :root {
+        --main-offset: var(--phone-main-offset);
+        --about-offset: var(--phone-about-offset);
+        --ideas-offset: var(--phone-ideas-offset);
+        --post-offset: var(--phone-post-offset);
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 75px 1fr;
+    }
+
+    /* #region Sidebar */
+    aside {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        height: 75px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        /* width: 100%; */
+        background-color: transparent;
+    }
+    aside .gradient {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 75px;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        /* background: var(--wht01); */
+        background-image: linear-gradient(to bottom,
+            transparent, transparent);
+        /* background-color: pink; */
+        /* filter: blur(1em); */
+        /* transform: translateY(-45px); */
+        /* inset: auto 0 0 0; */
+    }
+    aside .gradient::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, transparent);
+    }
+    aside header {
+        z-index: 3;
+        border-bottom: none;
+        height: 100%;
+    }
+    aside header .title {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+    }
+    aside header .title .framer {
+        margin: 0;
+    }
+    aside header .title .framer .logo span {
+        font-size: 6dvw;
+    }
+
+    /* #region Menu */
+    aside menu {
+        display: none;
+    }
+    /* #endregion */
+    /* #region Footer */
+    aside footer {
+        display: none;
+    }
+    /* #endregion */
+    
+    /* #region Language Toggle */
+    aside .language-toggle {
+        z-index: 3;
+        height: auto;
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+    /* #endregion */
+    /* #endregion */
+
+    /* #region Main */
+    main {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+
+    .index {
+        /* margin: 0; */
+        height: 100dvh;
+    }
+    .index .content {
+        /* margin: 0; */
+    }
+    .idex header {
+        /* margin: 75px 0 0 0; */
+        /* margin: 0; */
+    }
+    /* #endregion */
+
+}

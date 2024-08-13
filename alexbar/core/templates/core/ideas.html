@@ -4,13 +4,15 @@
 {% block content %}
 <div class="ideas">
 
-    <header>
-        <p id="en">SPECULATIVE</p>
-        <p id="ru">РАЗМЫШЛЕНИЯ</p>
-        <h1 id="en">Ideas for future projects</h1>
-        <h1 id="ru">Идеи для будущих проектов</h1>
-        <p id="en">Some ideas that I've thought of. If you have any thought about these, let me know!</p>
-        <p id="ru">Идеи которые я обдумывал. Если у вас есть что сказать по ним, пожалуйста, дайте мне знать!</p>
+    <header id="en">
+        <p>SPECULATIVE</p>
+        <h1>Ideas for future projects</h1>
+        <p>Some ideas that I've thought of. Let me know if you have any thought about those!</p>
+    </header>
+    <header id="ru">
+        <p>РАЗМЫШЛЕНИЯ</p>
+        <h1>Идеи для будущих проектов</h1>
+        <p>Идеи, о которых я думал. Если у вас есть что сказать по ним, пожалуйста, дайте мне знать!</p>
     </header>
     
     <div class="separator"></div>
@@ -23,7 +25,7 @@
 
         {% for idea in ideas %}
         {% if idea.slug != Null %}
-        <a class="idea" href="{% url 'post' idea.slug %}">
+        <a class="idea slug-idea" href="{% url 'post' idea.slug %}">
             <span>{{idea.name}}</span>
             <p>{{idea.date|date:"d/m/Y"}}</p>
         </a>

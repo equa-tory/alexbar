@@ -17,9 +17,9 @@ class CategoryAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     model = Post
     list_display = [
-        'position',
         'name',
         'description', 
+        'position',
         'date',
         'preview_image',
         'small_preview',

@@ -13,7 +13,7 @@ def index(request):
     framer3 = []
     # frames = [framer1, framer2, framer3]
 
-    posts = Post.objects.all().order_by('position')
+    posts = Post.objects.all().order_by('-position')
     for i, p in enumerate(posts):
         if i % 3 == 0:
             framer1.append(p)

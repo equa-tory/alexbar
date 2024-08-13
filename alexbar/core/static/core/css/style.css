@@ -27,10 +27,10 @@
     --ideas-offset: 35px 24%;
     --post-offset: 35px 24%;
 
-    --phone-main-offset: 100px 25px;
-    --phone-about-offset: 100px 25px;
-    --phone-ideas-offset: 100px 25px;
-    --phone-post-offset: 100px 25px;
+    --phone-main-offset: 30px 25px;
+    --phone-about-offset: 30px 25px;
+    --phone-ideas-offset: 30px 25px;
+    --phone-post-offset: 30px 25px;
     
 }
 * {
@@ -313,7 +313,7 @@ aside .language-toggle:hover svg path {
 .separator span {
     /* color: var(--wht03); */
     letter-spacing: 2px;
-    font-weight: 250;
+    font-weight: 300;
     font-size: 14px;
 }
 .about .separator span {
@@ -488,6 +488,9 @@ main {
         var(--wht02) 0px 10px 10px -3.5px,
         var(--wht01) 0px 0px 0px 0px;
 }
+.index .content .framer .post .image h1 {
+    color: var(--wht03);
+}
 .index .content .framer .post .image img {
     border-radius: 6px;
     max-width: 100%;
@@ -643,6 +646,9 @@ main {
 }
 /* #endregion */
 /* #region Image Set */
+.about .title .image-set:first-child {
+    display: none;
+}
 .about .title .image-set{
     width: 600px;
     height: 455px;
@@ -814,6 +820,7 @@ main {
     box-shadow: 0 2px 5px var(--wht04);
     border-radius: 6px;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     image-rendering: auto;
@@ -831,14 +838,21 @@ main {
 .about .education .image-set .frame1{
     position: absolute;
     height: 100%;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .about .education .image-set .frame1 span{
     color: var(--wht04);
     position: relative;
     z-index: 3;
+    font-weight: 300;
+    font-size: 16px;
 }
 /* #endregion */
 /* #endregion */
+
 /* #region ThingsIlove */
 .about .til {
     display: flex;
@@ -943,19 +957,22 @@ main {
 }
 .ideas header p{
     font-size: 12px;
-    letter-spacing: 2px;
+    font-weight: 450;
+    letter-spacing: 3px;
     color: var(--wht03);
     margin-bottom: 16px;
 }
 .ideas header h1{
     font-size: 32px;
     color: var(--wht04);
-    font-weight: 500;
+    font-weight: 550;
     margin-bottom: 16px;
 }
 .ideas header p:last-child{
     color: var(--wht04);
     letter-spacing: 1px;
+    font-weight: 300;
+    font-size:12px;
     /* margin-bottom: -16px; */
 }
 /* #endregion */
@@ -975,7 +992,7 @@ main {
     justify-content: space-between;
     margin: 6px 0;
 }
-.ideas .list .idea:hover span{
+.ideas .list .slug-idea:hover span{
     color: var(--wht03);
 }
 .ideas .list .idea span{
@@ -1246,18 +1263,168 @@ and (-webkit-device-pixel-ratio: 3) {} */
         grid-column: 1 / 2;
         grid-row: 1 / 3;
     }
+    .separator {
+        margin: var(--phone-main-offset);
+    }
 
+    /* #region Index */
     .index {
         /* margin: 0; */
         height: 100dvh;
     }
+    .index header {
+        margin-top:100px;
+    }
+    .index header span {
+        font-weight: 500;
+    }
+    .index header h1 {
+        margin-top: 0;
+        font-size: 25px;
+        font-weight: 550;
+    }
     .index .content {
-        /* margin: 0; */
+        /* flex-direction: column;
+        gap: 0px; */
+        display: block;
     }
-    .idex header {
-        /* margin: 75px 0 0 0; */
-        /* margin: 0; */
+    .index .content .framer {
+        gap: 0px;
     }
+    .index .content .framer .post {
+        /* min-height: auto ; */
+    }
+    .index footer {
+    }
+    .index footer span, .index footer a {
+        font-size: 9px;
+        font-weight: 550;
+    }
+    /* #endregion */
+    
+    /* #region Ideas */
+    .ideas header{
+        margin-top: 100px;
+    }
+    /* #endregion */
+
+    /* #region About */
+
+    .about {
+        gap:40px;
+    }
+
+    .about header {
+        margin-top: 100px;
+    }
+
+    /* #region Title */
+    .about .title {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about .title .fog {
+        padding: 40px 550px 375px 0px;
+        width: 120%;
+    }
+
+    .about .title .name {
+        width: 100%;
+    }
+
+    .about .title .name h1 {
+        font-size: 140px;
+        max-width: 300px;
+    }
+
+    .about .title .name footer span:last-child {
+        text-align: end;
+        max-width: 110px;
+    }
+
+    .about .title .image-set:first-child {
+        display: inline;
+    }
+    .about .title .image-set:last-child {
+        display: none;
+    }
+    .about .title .image-set {
+        height: auto;
+    }
+    .about .title .image-set .fog{
+        padding: 250px 200px;
+        right: 30px;
+        /* background-color: pink; */
+    }
+    .about .title .image-set .frame1{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    /* #endregion */
+
+    /* #region Info */
+    .about .info {
+        /* margin-top: 100px; */
+    }
+    .about .info .image-set {
+        display: none;
+    }
+    .about .info .text {
+        width: 100%;
+    }
+
+    /* #endregion */
+
+    /* #region Education */
+    .about .education{
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+    .about .separator {
+        width: 100%;
+        margin: 0;
+    }
+    .about .education .image-set{
+        width: 100%;
+        height: 230px;
+    }
+    .about .education .image-set .fog{
+        padding: 40px 550px 275px 0px;
+        width: 120%;
+
+        /* position: absolute;
+        top: -10px;
+        left: -90px; */
+        /* background-color: pink; */
+    }
+    /* #endregion */
+
+    /* #region ThingsIlove */
+    
+    .about .til {
+        flex-direction: column;
+    }
+    .about .til .image-set{
+        display: none;
+    }
+    /* #endregion */
+
+    /* #endregion */
+    
+    
+    .hor {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
     /* #endregion */
 
 }

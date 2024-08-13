@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block content %}
 <div class="index">
@@ -32,17 +33,27 @@
             <div class="post">
                 {% if p.small_preview == True %}
                 <a href="{% url 'post' p.slug %}" class="small-image image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% else %}
                 <a href="{% url 'post' p.slug %}" class="image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
+                        {% if p.description != None %}
                         <span class="description">{{p.description}}</span>
+                        {% endif %}
                     </div>
                     <span class="date">{{p.date|date:"Y"}}</span>
                 </div>
@@ -56,17 +67,27 @@
             <div class="post">
                 {% if p.small_preview == True %}
                 <a href="{% url 'post' p.slug %}" class="image small-image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% else %}
                 <a href="{% url 'post' p.slug %}" class="image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
+                        {% if p.description != None %}
                         <span class="description">{{p.description}}</span>
+                        {% endif %}
                     </div>
                     <span class="date">{{p.date|date:"Y"}}</span>
                 </div>
@@ -94,17 +115,27 @@
             <div class="post">
                 {% if p.small_preview == True %}
                 <a href="{% url 'post' p.slug %}" class="image small-image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% else %}
                 <a href="{% url 'post' p.slug %}" class="image">
+                    {% if p.preview_image %}
                     <img src="{{p.preview_image.url}}">
+                    {% else %}
+                    <h1>{{p.name|crop_first_letter }}</h1>
+                    {% endif %}
                 </a>
                 {% endif %}
                 <div class="framer">
                     <div class="name">
                         <span class="title">{{p.name}}</span>
+                        {% if p.description != None %}
                         <span class="description">{{p.description}}</span>
+                        {% endif %}
                     </div>
                     <span class="date">{{p.date|date:"Y"}}</span>
                 </div>
