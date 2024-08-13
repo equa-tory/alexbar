@@ -490,6 +490,7 @@ main {
 }
 .index .content .framer .post .image h1 {
     color: var(--wht03);
+    font-size: 60px;
 }
 .index .content .framer .post .image img {
     border-radius: 6px;
