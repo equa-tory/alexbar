@@ -681,14 +681,19 @@ main {
     position: absolute;
     height: 223px;
     width: 197px;
-    bottom: 23px;
+    bottom: 30px;
     left: 543px;
 }
 .about .title .image-set .frame3{
     position: absolute;
-    height: 214px;
+    /* height: 214px;
     width: 300px;
+    left: 543px; */
+    /* \/ remplace /\ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    height: 220px;
+    width: 220px;
     left: 543px;
+    top: -40px;
 }
 .about .title .image-set .frame4{
     position: absolute;
