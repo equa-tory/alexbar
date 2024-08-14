@@ -65,7 +65,7 @@ html, body {
 body main span,body main h1,body main h2,
 body main h3,body main h4,body main h5,
 body main h6,body main a,body main p
-body main div,body main img,.p p,
+body main div,body main img,.p p, .l, .b,
 body main .ideas *
 {
     color: #0000;
@@ -1109,6 +1109,13 @@ main {
     font-size: 16px;
 }
 
+.b {
+    font-weight: bolder;
+}
+.l {
+    font-weight: normal;
+}
+
 .p p {
    font-weight: 400;
    font-size: 16px;
@@ -1150,6 +1157,12 @@ main {
     margin: 39px 0 18px;
 }
 
+.space {
+    height: 16px;
+    width: 100%;
+    /* margin: 5px; */
+}
+
 .long-separator {
     width: 100%;
     left: 0;
@@ -1157,7 +1170,13 @@ main {
     margin: 0;
 }
 
-
+.selector {
+    user-select: text;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: fit-content; 
+    padding: 10px;
+    border-radius: 6px;
+}
 
 
 

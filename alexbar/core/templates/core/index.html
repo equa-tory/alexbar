@@ -29,6 +29,18 @@
     
     <div class="content">
         <div class="framer">
+            <!-- <div class="post">
+                <a href="{% url 'ideas' %}" class="small-image image">
+                    <h1>I</h1>
+                </a>
+                <div class="framer">
+                    <div class="name">
+                        <span class="title">Ideas</span>
+                        <span class="description">Some of my thoughts</span>
+                    </div>
+                    <span class="date">2024</span>
+                </div>
+            </div> -->
             {% for p in framer1 %}
             <div class="post">
                 {% if p.small_preview == True %}

@@ -10,7 +10,7 @@ class Section(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=26, db_index=True, verbose_name="Category name")
-    posts = models.ManyToManyField('Post', related_name="+")
+    posts = models.ManyToManyField('Post', null=True, blank=True, related_name="+")
 
     def __str__(self):
         return "Category: " + self.name
