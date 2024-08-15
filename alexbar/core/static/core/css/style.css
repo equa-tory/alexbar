@@ -1031,15 +1031,17 @@ main {
     gap: 50px;
     overflow-x: scroll;
     overflow-y: hidden;
+    /* margin-left: 50px; */
 }
 
 .img6 {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     padding: 100px;
     display: flex;    
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     /* gap: 50px; */
     overflow-x: scroll;
     overflow-y: hidden;
