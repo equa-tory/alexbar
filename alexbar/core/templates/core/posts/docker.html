@@ -15,9 +15,11 @@
         <div class="r3">
             <h3 id="en">Docker helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management.</h3>
             <h3 id="ru">Docker помогает разработчикам создавать, совместно использовать, запускать и проверять приложения в любом месте — без утомительной настройки среды или управления ею.</h3>
-            <p id="ru">Скачать Docker:</p>
+            <div class="separator"></div>
+            <h2 id="ru">Скачать Docker:</h2>
+            <div class="space"></div>
             <div class="vert" style="gap: 10px;">
-                <a href="https://www.docker.com/products/docker-desktop/">Windows</a>
+                <span><a href="https://www.docker.com/products/docker-desktop/">Windows</a></span>
                 <p>Arch Linux: <p class="selector">sudo pacman -S docker</p></p>
                 <p>Debian/Ubuntu: <p class="selector">curl -fsSL https://get.docker.com -o get-docker.sh<br> sudo sh get-docker.sh</p></p>
             </div>
@@ -28,8 +30,15 @@
 
     <div class="vert10">
         <div class="p">
-            <p id="en">Container is a mini OS that can be published to other users. It stores your premade project which is very easy to share. The main advantage of this technology is that users do not have to manually configure the project, you just download the container and launch it in one click.</p>
-            <p id="ru">Контейнер - мини ос которую можно опубликовать для других пользователей. Он хранит ваш настроенный проект которым очень легко делиться. Главный плюс данной технологии - это необязательность пользователей ручной настройки проекта, вы просто скачиваете контейнер и запускаете его в один клик.</p>
+            <p id="en"><span class="b">Container</span> is a mini OS that can be published to other users. It stores your premade project which is very easy to share. The main advantage of this technology is that users do not have to manually configure the project, you just download the container and launch it in one click.</p>
+            <p id="ru"><span class="b">Контейнер</span> - мини ос которую можно опубликовать для других пользователей. Он хранит ваш настроенный проект которым очень легко делиться. Главный плюс данной технологии - это необязательность пользователей ручной настройки проекта, вы просто скачиваете контейнер и запускаете его в один клик.</p>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="vert10">
+        <div class="p">
+            <p id="en"><span class="b">Image</span> this is a lightweight, independent, executable set of programs that includes everything you need for the application to work: code, environment, system tools, libraries and settings. The image becomes a container at runtime when it is running on Docker.</p>
+            <p id="ru"><span class="b">Изображение</span> - это легкий, независимый, исполняемый набор программ, который включает в себя все что нужно для работы приложения: код, окружение, системные инструменты, библиотеки и настройки. Изображение становится контейнером во время выполнения, когда он работает на Docker Engine.</p>
         </div>
     </div>
 
@@ -44,35 +53,36 @@
         <p id="ru">У Docker'а есть и UI версия с интерфейсом, но я советую научиться использовать через терминал. Ниже я привёл часто используемые комманды при работе с Docker.</p>
     </div>
 
-    <div class="separator"></div>
+    <!-- <div class="separator"></div> -->
+    <div class="space"></div>
 
-    <div class="vert selector">
-        <div class="span"><p class="b selector">run <span class="l">(create or create new container)</span></p></div>
+    <div class="vert selector" id="en">
+        <div class="span"><p class="b selector">run <span class="l">(start or create new container)</span></p></div>
         <div class="p"><p>-i (keep container running even if it's not open)</p></div>
         <div class="p"><p>-t (open in terminal)</p></div>
         <div class="p"><p>--name [name] (gives a entered name to the container instead of random)</p></div>
-        <div class="p"><p>-p [localport:remoteport] (connects local port to remote for port forwarding)</p></div>
+        <div class="p"><p>-p [localport:remoteport] (connects local port of container to remote for port forwarding)</p></div>
         <div class="p"><p>[image_name/id] (make the container based on image)</p></div>
         <div class="space"></div>
 
-        <div class="span"><p class="b selector">rm <span class="l">[container name/id] (stop and remove container)</span></p></div>
+        <div class="span"><p class="b selector">rm <span class="l">[container_name/id] (stop and remove container)</span></p></div>
         <div class="space"></div>
 
-        <div class="span"><p class="b selector">stop <span class="l">[container name/id] (stop container)</span></p></div>
+        <div class="span"><p class="b selector">stop <span class="l">[container_name/id] (stop container)</span></p></div>
         <div class="space"></div>
         
-        <div class="span"><p class="b selector">start <span class="l">[container name/id] (start container)</span></p></div>
+        <div class="span"><p class="b selector">start <span class="l">[container_name/id] (start container)</span></p></div>
         <div class="p"><p>-a (attach to container in terminal)</p></div>
         <div class="space"></div>
 
-        <div class="span"><p class="b selector">restart <span class="l">[container name/id] (restart container)</span></p></div>
+        <div class="span"><p class="b selector">restart <span class="l">[container_name/id] (restart container)</span></p></div>
         <div class="space"></div>
 
-        <div class="span"><p class="b selector">kill <span class="l">[container name/id] (not safe hard stop of a container)</span></p></div>
+        <div class="span"><p class="b selector">kill <span class="l">[container_name/id] (not safe hard stop of a container)</span></p></div>
         <div class="space"></div>
 
         <div class="span"><p class="b selector">images <span class="l">(shows all images)</span></p></div>
-        <div class="p"><p>-rm [image name/id] (remove image, before deletion make sure local containers with this image shouldn't exist)</p></div>
+        <div class="p"><p>-rm [image_name/id] (remove image, before deletion make sure local containers with this image shouldn't exist)</p></div>
         <div class="space"></div>
 
         <div class="span"><p class="b selector">ps <span class="l">(shows running containers)</span></p></div>
@@ -85,60 +95,105 @@
         <div class="space"></div>
 
         <div class="span"><p class="b selector">pull <span class="l">(clone/download repo)</span></p></div>
-        <div class="p"><p>[repo name]</p></div>
+        <div class="p"><p>[repo_name]</p></div>
         <div class="space"></div>
 
         <div class="span"><p class="b selector">push <span class="l">(share/upload repo)</span></p></div>
-        <div class="p"><p>[repo name] (ex: username/repo_name)</p></div>
+        <div class="p"><p>[repo_name] (ex: username/repo_name)</p></div>
         <div class="space"></div>
     </div>
+    <div class="vert selector" id="ru">
+        <div class="span"><p class="b selector">run <span class="l">(запускает или создаёт новый контейнер)</span></p></div>
+        <div class="p"><p>-i (держать запущенный контейнер, даже если он не открыт)</p></div>
+        <div class="p"><p>-t (открыть в терминале)</p></div>
+        <div class="p"><p>--name [имя] (указывает имя контейнера вместо случайного)</p></div>
+        <div class="p"><p>-p [локальный_порт:удалённый_порт] (подключает локальный порт контейнера к удалённому порту)</p></div>
+        <div class="p"><p>[имя_изображения/id] (создаёт новый контейнер с указанным изображением)</p></div>
+        <div class="space"></div>
 
+        <div class="span"><p class="b selector">rm <span class="l">[имя_контейнера/id] (остановить и удалить контейнер)</span></p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">stop <span class="l">[имя_контейнера/id] (остановить контейнер)</span></p></div>
+        <div class="space"></div>
+        
+        <div class="span"><p class="b selector">start <span class="l">[имя_контейнера/id] (запустить контейнер)</span></p></div>
+        <div class="p"><p>-a (подключиться к контейнеру в терминале)</p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">restart <span class="l">[имя_контейнера/id] (перезапустить контейнер)</span></p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">kill <span class="l">[имя_контейнера/id] (не безопасный, насильный способ остановить контейнер)</span></p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">images <span class="l">(показать все изображения)</span></p></div>
+        <div class="p"><p>-rm [имя_контейнера/id] (удаляет контейнер, перед удалением убедитесь что все установленные контейнеры с этим изображением остановленны)</p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">ps <span class="l">(показывает запущенные контейнеры)</span></p></div>
+        <div class="p"><p>-a (показать все контейнеры)</p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">build <span class="l">(создать новое изображение)</span></p></div>
+        <div class="p"><p>-t [имя] (даёт имя изображению)</p></div>
+        <div class="p"><p>[путь]</p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">pull <span class="l">(клонировать/скачать репозиторий)</span></p></div>
+        <div class="p"><p>[имя_репозитория]</p></div>
+        <div class="space"></div>
+
+        <div class="span"><p class="b selector">push <span class="l">(поделиться/отправить репозиторий)</span></p></div>
+        <div class="p"><p>[имя_репозитория] (пример: имя_пользователя/имя_репозитория)</p></div>
+        <div class="space"></div>
+    </div>
 </div>
-<div class="separator long-separator"></div>
-<div class="in-post">
 
+<div class="separator long-separator"></div>
+
+<div class="in-post">
     <div class="vert">
         <div class="h1">
             <h1 class="r1">Dockerfile</h1>
-            <div class="p" id="en"><p>Dockerfile - это конфиг который помогает собрать проект, выполнить нужные команды и сильно упрощает жизнь. Он не обязателен для контейнера, но для не простых проектов очень нужен.</p></div>
-            <div class="p" id="ru"><p>Dockerfile is a config that helps to assemble a project, execute the necessary commands and greatly simplifies life. It is not required for a container, but it is very necessary for harder projects.</p></div>
+            <div class="p" id="en"><p>Dockerfile is a config that helps to assemble a project, execute the necessary commands and greatly simplifies life. It is not required for a container, but it is very necessary for harder projects.</p></div>
+            <div class="p" id="ru"><p>Dockerfile - это конфиг который помогает собрать проект, выполнить нужные команды и сильно упрощает жизнь. Он не обязателен для контейнера, но для не простых проектов очень нужен.</p></div>
         </div>
     </div>
 
-    <div class="separator"></div>
+    <!-- <div class="separator"></div> -->
+    <div class="space"></div>
 
-    <div class="p"><p style="margin-bottom: 16px;">/path/to/your/project/Dockerfile:</p></div>
+    <div class="p"><p style="margin-bottom: 16px;" id="en">/path/to/your/project/Dockerfile:</p></div>
+    <div class="p"><p style="margin-bottom: 16px;" id="ru">/путь/к/вашему/проекту/Dockerfile:</p></div>
 
-    <div class="vert selector">
-
-        <div class="p"><p class="selector">FROM repo name:version/tag (ex: user/app:3.10, python, what repo to install)</p></div>
-        <div class="space"></div>
-
-        <div class="p"><p class="selector">WORDKDIR path (ex: /code, /usr/src/app, where programs will work)</p></div>
-        <div class="space"></div>
-
-        <div class="p"><p class="selector">COPY path/from path/to (ex: ./ ./, send files to container)</p></div>
-        <div class="space"></div>
-
-        <div class="p"><p class="selector">RUN command (ex: pip install -r requirements.txt, run command once on container creation)</p></div>
-        <div class="space"></div>
-
-        <div class="p"><p class="selector">CMD [command1,command2, ...] (ex: [python,main.py], run command every time on container start)</p></div>
-        <div class="space"></div>
-
-        <div class="p"><p class="selector">EXPOSE port (ex: 8000, expose port for local network)</p></div>
-        <div class="space"></div>
-
+    <div class="vert selector" id="en">
+        <div class="p"><p class="selector">FROM repo_name:version/tag (ex: user/app:3.10; python, what repo to install)</p></div>
+        <div class="p"><p class="selector">WORDKDIR path (ex: /code, /usr/src/app, selection of project root directory)</p></div>
+        <div class="p"><p class="selector">COPY path/from path/to (ex: ./ ./, selection of container project directory)</p></div>
+        <div class="p"><p class="selector">RUN command (ex: pip install -r requirements.txt; run command once on container creation)</p></div>
+        <div class="p"><p class="selector">CMD [command1,command2, ...] (ex: [python,main.py]; run command every time on container start)</p></div>
+        <div class="p"><p class="selector">EXPOSE port (ex: 8000; expose port for local network of container)</p></div>
     </div>
 
+    <div class="vert selector" id="ru">
+        <div class="p"><p class="selector">FROM имя_репозитория:версия/тэг (пример: python:3.10; какой репозиторий установить)</p></div>
+        <div class="p"><p class="selector">WORDKDIR путь (пример: /code, выбор корневой директории проекта)</p></div>
+        <div class="p"><p class="selector">COPY путь/откуда путь/куда (пример: ./ ./, выбор директории прокта в контейнере)</p></div>
+        <div class="p"><p class="selector">RUN комманда (пример: pip install -r requirements.txt; единожды запустить комманду при создании контейнера)</p></div>
+        <div class="p"><p class="selector">CMD [комманда1,комманда2, ...] (ex: [python,main.py]; запускать каждое включение контейнера)</p></div>
+        <div class="p"><p class="selector">EXPOSE порт (пример: 8000; прокинуть порт для локальной сети контейнера)</p></div>
+    </div>
 </div>
-<div class="separator long-separator"></div>
-<div class="in-post">
 
+<div class="separator long-separator"></div>
+
+<div class="in-post">
     <div class="hor">
         <div class="vert">
-            <div class="span"><span>Использованные ресурсы</span></div>
-            <div class="p"><p><a href="https://habr.com/ru/articles/659049/">Habr</a></p></div>
+            <div class="span" id="en"><span>Used resources</span></div>
+            <div class="span" id="ru"><span>Использованные ресурсы</span></div>
+            <div class="p"><p><a href="https://habr.com/ru/articles/804323/">Habr</a></p></div>
             <div class="p"><p><a href="https://docs.docker.com/reference/dockerfile/">Docker</a></p></div>
         </div>
     </div>
