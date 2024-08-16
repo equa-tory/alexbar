@@ -132,6 +132,8 @@ aside {
     flex-direction: column;
     background-color: var(--wht01);
     z-index: 16;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 /* #region Header */
 aside header {
@@ -1047,7 +1049,7 @@ main {
     overflow-y: hidden;
 }
 .img6 img {
-    width: 1000px;
+    width: 780px;
     border-radius: 6px;
     margin: 0 25px;
 }
