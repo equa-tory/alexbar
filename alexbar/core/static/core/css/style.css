@@ -1047,7 +1047,7 @@ main {
     overflow-y: hidden;
 }
 .img6 img {
-    width: 600px;
+    width: 1000px;
     border-radius: 6px;
     margin: 0 25px;
 }
@@ -1180,6 +1180,8 @@ main {
     border-radius: 6px;
 }
 
+/* audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel */
 
 
 /* #endregion */
