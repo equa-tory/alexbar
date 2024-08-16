@@ -1298,6 +1298,10 @@ and (-webkit-device-pixel-ratio: 3) {} */
         margin: var(--phone-main-offset);
     }
 
+    iframe {
+        display: none;
+    }
+
     /* #region Index */
     .index {
         /* margin: 0; */
@@ -1454,6 +1458,13 @@ and (-webkit-device-pixel-ratio: 3) {} */
         gap: 20px;
         width: 100%;
         justify-content: space-between;
+    }
+
+    .img6 {
+        padding: 0;
+    }
+    .img6 img {
+        width: 70dvw;
     }
 
     /* #endregion */
