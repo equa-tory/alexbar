@@ -1067,6 +1067,10 @@ main {
     width: 1000px;
     margin: 0px 0px;
 }
+.img6 .unr-img:hover {
+    width: 780px;
+    margin: 100px 25px;
+}
 
 .vert10 {
     display: flex;
