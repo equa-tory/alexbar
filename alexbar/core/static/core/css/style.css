@@ -189,6 +189,9 @@ aside header .title .title-btn {
 aside header .title .title-btn:hover {
     color: var(--wht03);
 }
+aside .language-toggle {
+    cursor: pointer;
+}
 /* #endregion */
 /* #region Menu */
 aside menu{
