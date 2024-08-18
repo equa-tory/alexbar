@@ -1345,7 +1345,7 @@ and (-webkit-device-pixel-ratio: 3) {} */
         gap: 0px;
     }
     .index .content .framer .post {
-        /* min-height: auto ; */
+        margin: 10px 0;
     }
     .index footer {
     }
