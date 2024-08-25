@@ -1,0 +1,33 @@
+h:p3school.png;
+
+in:
+vert:
+t:Persona 3 Reload;
+d:Game that broke me;
+a:Persona 3 Reload OST - Memories of You [FINAL WASH OF 2024!] HQ.m4a;
+sep;
+a:Persona 3 Reload OST - Memories of You [FINAL WASH OF 2024!] HQ.m4a;
+:vert;
+:in;
+
+sep;
+
+
+in:
+vert:
+t:Persona 3 Reload;
+d:Game that broke me;
+a:Persona 3 Reload OST - Memories of You [FINAL WASH OF 2024!] HQ.m4a;
+:vert;
+:in;
+
+sep;
+
+in:
+hor:
+vert:
+s:Created;
+p:26.08 - 2024;
+:vert;
+:hor;
+:in;
