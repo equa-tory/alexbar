@@ -27,6 +27,8 @@ class Post(models.Model):
     small_preview = models.BooleanField(default=False, verbose_name="Small preview")
     slug = models.SlugField(max_length=100, null=False, blank=False, unique=True, db_index=True, verbose_name="URL")
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE)
+    has_html = models.BooleanField(default=False, verbose_name="Has HTML")
+    content = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"Post {self.name} of {self.date}"

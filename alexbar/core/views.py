@@ -1,8 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.template import Template, Context
+from django.utils.safestring import mark_safe
 
 from core.utils import *
 from .models import *
+
+
+from .main import convert_to_html
+
 
 def redir(request):
     return redirect('index')
@@ -67,25 +73,30 @@ def pageNotFound(request, exception):
 
 def post(request, slug):
     post = Post.objects.get(slug=slug)
-    data = {
-        'title': post.name,
-        'headers': headers,
-        'sections': sections,
-    }
-    return render(request, f'core/posts/{post.slug}.html', context=data)
+    
+    if post.has_html:
+        data = {
+            'title': post.name,
+            'headers': headers,
+            'sections': sections,
+        }
+        return render(request, f'core/posts/{post.slug}.html', context=data)
 
-# def little_giant(request):
-#     data = {
-#         'title': 'Little Giant',
-#         'headers': headers,
-#         'sections': sections
-#     }
-#     return render(request, 'core/posts/little-giant.html', context=data)
+    else:
 
-# def katastasis(request):
-#     data = {
-#         'title': 'Katastasis',
-#         'headers': headers,
-#         'sections': sections
-#     }
-#     return render(request, 'core/posts/katastasis.html', context=data)
+        content = convert_to_html(post.content)
+        template = Template(content)
+
+        context = {
+
+            'title': post.name,
+            'headers': headers,
+            'sections': sections,
+        }
+
+        pre_render = template.render(Context(context))
+
+        data = {
+            'content': mark_safe(pre_render),
+        }
+        return render(request, f'core/posts/post.html', context=data)
