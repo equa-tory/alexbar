@@ -6,8 +6,8 @@ from django.utils.safestring import mark_safe
 from core.utils import *
 from .models import *
 
+from .post_converter import convert_to_html
 
-from .main import convert_to_html
 
 
 def redir(request):
@@ -20,7 +20,13 @@ def index(request):
     # frames = [framer1, framer2, framer3]
 
     posts = Post.objects.all().order_by('-position')
-    for i, p in enumerate(posts):
+    visible_posts = []
+    for p in posts:
+        if p.position < 0:
+            continue
+        visible_posts.append(p)
+
+    for i, p in enumerate(visible_posts):
         if i % 3 == 0:
             framer1.append(p)
         elif i % 3 == 1:

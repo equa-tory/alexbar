@@ -38,7 +38,7 @@ PATTERNS = [
         </div>"""),
 
 
-(r'sep;', lambda content: f"""
+(r'---', lambda content: f"""
     <div class="separator long-separator"></div>
 """),
 
