@@ -69,7 +69,7 @@ PATTERNS = [
 
 (r'img-set:', lambda content: f"""<div class="cen">
     <div class="img6">"""),
-(r'img:(.*?);', lambda content: f"""        <img src="{{% static 'core/img/posts/{content}' %}}" style="width: 50dvw; border-radius: 6px;">"""),
+(r'img:(.*?);', lambda content: f"""        <img src="{{% static 'core/img/posts/{content}' %}}" style="border-radius: 6px;">"""),
 (r':img-set;', lambda content: f"""    </div>
 </div>"""),
 
@@ -99,6 +99,8 @@ PATTERNS = [
     </div>
 </div>
 """),
+
+(r'embed:(.*?);', lambda content: f"""{content}"""),
 ]
 
 
