@@ -25,6 +25,7 @@ class PostAdmin(admin.ModelAdmin):
         'small_preview',
         'slug', 
         'category',
+        'has_html',
     ]
     prepopulated_fields = {"slug": ("name",)}
     list_filter = ('category',)
