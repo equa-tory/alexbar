@@ -318,6 +318,12 @@ aside .language-toggle:hover svg path {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.selector span,.selector a,.selector p {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
 .separator span {
     /* color: var(--wht03); */
     letter-spacing: 2px;

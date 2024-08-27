@@ -10,6 +10,10 @@ PATTERNS = [
 <div class="header" style="height: fit-content;">
     <img src="{{% static 'core/img/posts/{content}' %}}" style="width: 100%; border-radius: 6px;">
 </div>"""),
+(r'smaller-header:(.*?);', lambda content: f"""
+<div class="header">
+    <img src="{{% static 'core/img/posts/{content}' %}}" style="width: 50%; border-radius: 6px;">
+</div>"""),
 
 
 (r'in:', lambda content: f"""
@@ -101,6 +105,9 @@ PATTERNS = [
 """),
 
 (r'embed:(.*?);', lambda content: f"""{content}"""),
+    
+(r'selector:', lambda content: f"""<div class="selector">"""),
+(r':selector;', lambda content: f"""</div"""),
 ]
 
 
