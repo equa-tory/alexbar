@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- CONTENT -->
+
+<div class="in-post">
+
+    <div class="vert10" style="display: none;">
+        <audio controls id="aud">
+            <source src="{% static 'core/audio/GetOut.mp3' %}">
+        </audio>
+    </div>
+
+    <div class="hor">
+        <div class="h1">
+            <h1 class="h1" id="pre">Press me</h1>
+        </div>
+    </div>
+    <div class="cen">
+        <div class="img6">
+            <img src="{% static 'core/img/po.png' %}" style="border-radius: 6px;" onclick="playAudio()">
+        </div>
+    </div>
+</div>
+
+<script>
+    var presses = 0;
+    function playAudio()
+    {
+        var audio = document.getElementById("aud");
+        audio.pause();
+        audio.currentTime = 0;
+        audio.play();
+        var p = document.getElementById("pre");
+        presses++;
+        p.innerHTML = "Press me " + presses;
+    }
+</script>
+
+{% endblock %}
